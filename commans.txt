@@ -1,0 +1,71 @@
+cd "d:\durgas\Durgas ai\chatgpt-clone"
+yarn
+yarn dev
+
+cd chatgpt-clone && npm install && npm run dev
+
+yarn
+yarn dev
+yarn start
+yarn lint
+yarn build
+
+
+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
+
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA5CfN-iq2myNo9BXh4j0g7GHH39LV1cmY",
+  authDomain: "durgas-def2e.firebaseapp.com",
+  projectId: "durgas-def2e",
+  storageBucket: "durgas-def2e.firebasestorage.app",
+  messagingSenderId: "766030362694",
+  appId: "1:766030362694:web:725b716d06143cb3a17247"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
+
+npm install firebase
+
+npm install -g firebase-tools
+
+firebase login
+firebase init
+firebase deploy
+
+
+npm i -g npkill
+
+
+npkill --delete-all --hide-errors --full
+npx npkill
+
+
+
+
+
+
+git init
+git add .
+git commit -m "5-2-2024"
+git remote add origin https://github.com/thekoushikdurgas/durgasai.git
+git branch -M durgas
+git push -u origin durgas -f
+git fetch --all
+
+
+
+
+
+
