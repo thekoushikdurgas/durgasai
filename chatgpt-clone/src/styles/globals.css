@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 255, 255, 255;
+	--background-start-rgb: 76, 29, 149;
+	--background-end-rgb: 91, 33, 182;
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+		to bottom,
+		rgb(var(--background-start-rgb)),
+		rgb(var(--background-end-rgb))
+	);
+}
+
+/* Custom scrollbar for chat messages */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(76, 29, 149);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(91, 33, 182);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(107, 33, 168);
+}
