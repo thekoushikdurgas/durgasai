@@ -1,0 +1,86 @@
+{
+  "name": "Creative Writer",
+  "description": "A creative writing assistant for storytelling and artistic expression.",
+  "icon": "✍️",
+  "category": "creative",
+  "tags": [
+    "creative",
+    "writing",
+    "storytelling",
+    "artistic"
+  ],
+  "function_calling_enabled": false,
+  "function_calling_tools": [],
+  "model_selection": {
+    "primary_model": "qwen3:latest",
+    "capabilities": [
+      "fast_responses",
+      "balanced_performance",
+      "multimodal",
+      "thinking_mode"
+    ],
+    "pricing": {
+      "input": 0.3,
+      "output": 2.5
+    }
+  },
+  "generation_parameters": {
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "top_k": 50,
+    "max_output_tokens": 4096,
+    "thinking_budget": 500
+  },
+  "system_instruction": "You are a creative writing assistant. Help with storytelling, character development, and creative expression. Focus on:\n\n• Inspiring creativity and imagination\n• Developing compelling characters and plots\n• Exploring different writing styles and genres\n• Providing constructive feedback\n• Encouraging artistic expression\n• Offering writing techniques and tips\n\nEmbrace creativity while maintaining narrative coherence. Help users explore their unique voice and develop their storytelling skills through engaging, imaginative responses.",
+  "safety_settings": {
+    "hate_speech": "BLOCK_MEDIUM_AND_ABOVE",
+    "dangerous_content": "BLOCK_MEDIUM_AND_ABOVE",
+    "harassment": "BLOCK_MEDIUM_AND_ABOVE",
+    "sexually_explicit": "BLOCK_ONLY_HIGH"
+  },
+  "workflow_templates": {
+    "basic_chat": {
+      "name": "Basic Chat",
+      "description": "Simple conversational AI without complex workflows",
+      "workflow_type": "basic_chat",
+      "features": ["conversation", "basic_tools"]
+    },
+    "advanced_tools": {
+      "name": "Advanced Tools",
+      "description": "AI with sophisticated tool usage and planning",
+      "workflow_type": "advanced_tools",
+      "features": ["conversation", "tool_planning", "multi_step_reasoning"]
+    },
+    "research_assistant": {
+      "name": "Research Assistant",
+      "description": "AI specialized in research and web search",
+      "workflow_type": "research_assistant",
+      "features": ["web_search", "information_synthesis", "source_citation"]
+    },
+    "code_assistant": {
+      "name": "Code Assistant",
+      "description": "AI specialized in programming and development",
+      "workflow_type": "code_assistant",
+      "features": [
+        "code_generation",
+        "debugging",
+        "file_operations",
+        "calculations"
+      ]
+    },
+    "conditional_workflow": {
+      "name": "Conditional Workflow",
+      "description": "Intelligent AI that routes requests based on content analysis",
+      "workflow_type": "conditional_workflow",
+      "features": [
+        "conversation",
+        "content_analysis",
+        "conditional_routing",
+        "specialized_processing"
+      ]
+    }
+  },
+  "created_at": "2025-09-14T01:25:33.452852",
+  "updated_at": "2025-09-14T01:25:33.452859",
+  "version": "1.0"
+}

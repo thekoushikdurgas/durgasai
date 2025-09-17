@@ -1,0 +1,111 @@
+{
+  "id": "get_current_weather_001",
+  "name": "get_current_weather",
+  "description": "Get comprehensive weather information for a location with support for current, historical, and forecast data",
+  "version": "2.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "low",
+  "function_name": "get_current_weather",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "location",
+      "type": "string",
+      "description": "The city and state/country, e.g. 'San Francisco, CA' or 'London, UK'",
+      "required": true
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "description": "Temperature unit: 'celsius' or 'fahrenheit'",
+      "required": false
+    },
+    {
+      "name": "date",
+      "type": "string",
+      "description": "Date in YYYY-MM-DD format for historical/forecast data. Leave empty for current weather",
+      "required": false
+    },
+    {
+      "name": "time",
+      "type": "string",
+      "description": "Time in HH:MM format (24-hour) for specific hourly data. Leave empty for current time",
+      "required": false
+    },
+    {
+      "name": "forecast_days",
+      "type": "integer",
+      "description": "Number of forecast days (1-16). Only used when date is not specified",
+      "required": false
+    },
+    {
+      "name": "include_daily",
+      "type": "boolean",
+      "description": "Include daily weather summary (max/min temps, precipitation, etc.)",
+      "required": false
+    },
+    {
+      "name": "include_hourly",
+      "type": "boolean",
+      "description": "Include detailed hourly weather data",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "weather_report",
+      "type": "string",
+      "description": "Formatted weather information summary",
+      "format": "plain_text"
+    },
+    {
+      "name": "current_weather",
+      "type": "object",
+      "description": "Current weather conditions",
+      "format": "json"
+    },
+    {
+      "name": "location_info",
+      "type": "object",
+      "description": "Location details including coordinates and timezone",
+      "format": "json"
+    },
+    {
+      "name": "hourly_weather",
+      "type": "array",
+      "description": "Hourly weather data (if requested)",
+      "format": "json"
+    },
+    {
+      "name": "daily_weather",
+      "type": "array",
+      "description": "Daily weather summary (if requested)",
+      "format": "json"
+    },
+    {
+      "name": "api_info",
+      "type": "object",
+      "description": "API response metadata and data source information",
+      "format": "json"
+    }
+  ],
+  "code": "get_current_weather.py",
+  "dependencies": ["requests", "geopy"],
+  "tags": [
+    "weather",
+    "location",
+    "forecast",
+    "historical",
+    "api",
+    "meteorology"
+  ],
+  "created_at": "2025-09-12T04:06:33.881705",
+  "updated_at": "2025-01-15T10:30:00.000000",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

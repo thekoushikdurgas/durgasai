@@ -1,0 +1,55 @@
+{
+  "name": "text_to_numbers_analysis",
+  "description": "Convert text list to lowercase, generate mock numeric lengths, analyze stats.",
+  "input_parameters": [
+    {
+      "name": "text_list",
+      "type": "array",
+      "item_type": "string",
+      "description": "Text items to analyze",
+      "required": false
+    },
+    {
+      "name": "operation",
+      "type": "string",
+      "description": "text_list_processor op (lowercase/sort/unique)",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    { "name": "summary", "type": "object", "format": "json", "description": "Statistical summary" },
+    { "name": "analysis_report", "type": "string", "format": "plain_text", "description": "Report text" },
+    { "name": "dataset_size", "type": "integer", "description": "Count of items" },
+    { "name": "outliers_detected", "type": "array", "item_type": "number", "format": "plain_text", "description": "Outlier values" }
+  ],
+  "steps": [
+    {
+      "name": "process_text_lowercase",
+      "tool": "text_list_processor",
+      "inputs": {
+        "text_list": { "type": "const", "value": ["Alpha", "Beta", "Gamma", "Gamma"] },
+        "operation": { "type": "const", "value": "lowercase" }
+      }
+    },
+    {
+      "name": "process_text_unique",
+      "tool": "text_list_processor",
+      "inputs": {
+        "text_list": { "type": "ref", "step": 0, "output": "processed_items" },
+        "operation": { "type": "const", "value": "unique" }
+      }
+    },
+    {
+      "name": "analyze_numbers",
+      "tool": "number_list_analyzer",
+      "inputs": {
+        "numbers": {
+          "type": "const",
+          "value": [5, 4, 5]
+        },
+        "include_details": { "type": "const", "value": true }
+      }
+    }
+  ]
+}
+

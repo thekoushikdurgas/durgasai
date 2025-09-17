@@ -1,0 +1,72 @@
+Category,Format/Standard,Description,Example,Source
+Basic Time Concepts,Instant,One point on the time axis,N/A,Time Standard
+Basic Time Concepts,Date,A quantity characterizing an instant,2014-04-26T09:42:36.75,Time Standard
+Basic Time Concepts,Time Interval,Part of the time axis limited by two instants,N/A,Time Standard
+Basic Time Concepts,Duration,A quantity characterizing a time interval,2 hours 30 minutes,Time Standard
+Basic Time Concepts,Chronology,Ordered sequence of events in the past,Historical timeline,Time Standard
+Time Standards,TCG,Geocentric Coordinate Time - coordinate time at Earth's center,N/A,Time Standard
+Time Standards,TAI,International Atomic Time - primary physically realized time standard,N/A,Time Standard
+Time Standards,UT1,Universal Time - Earth Rotation Angle scaled to mean solar time,N/A,Time Standard
+Time Standards,UTC,Coordinated Universal Time - atomic time scale approximating UT1,2019-10-12T07:20:50.52Z,Time Standard
+Time Standards,GPST,GPS Time - TAI - 19 seconds,N/A,Time Standard
+Time Standards,TT,Terrestrial Time - theoretical timescale,N/A,Time Standard
+Time Standards,TCB,Barycentric Coordinate Time - coordinate time at solar system barycenter,N/A,Time Standard
+Time Standards,ET,Ephemeris Time - astronomical time standard (1952-1976),N/A,Time Standard
+Time Standards,TDT,Terrestrial Dynamical Time - replaced by TT,N/A,Time Standard
+Time Standards,TDB,Barycentric Dynamical Time - dynamical time at barycenter,N/A,Time Standard
+Earth Rotation Based,Apparent Solar Time,True solar time based on actual sun position,12:00 when sun crosses meridian,Time Standard
+Earth Rotation Based,Sidereal Time,Time by the stars - 23h 56m 4s rotation,Used for astronomical observations,Time Standard
+Earth Rotation Based,Mean Solar Time,Average of apparent solar time,Traditional 24-hour day,Time Standard
+Earth Rotation Based,GMT,Greenwich Mean Time - historical standard,12:00 GMT,Time Standard
+Earth Rotation Based,UT0,Universal Time version 0 (no longer used),N/A,Time Standard
+Earth Rotation Based,UT2,Universal Time version 2 (no longer used),N/A,Time Standard
+ISO 8601,Basic Date Format,YYYYMMDD format,20190907,ISO 8601
+ISO 8601,Extended Date Format,YYYY-MM-DD format,2019-09-07,ISO 8601
+ISO 8601,Basic Time Format,T[hh][mm][ss],T134730,ISO 8601
+ISO 8601,Extended Time Format,T[hh]:[mm]:[ss],T13:47:30 or 13:47:30,ISO 8601
+ISO 8601,Date-Time Format,Combined date and time,2019-09-07T13:47:30,ISO 8601
+ISO 8601,UTC Time,Time with Z designator for UTC,2019-09-07T13:47:30Z,ISO 8601
+ISO 8601,Time with Offset,Time with timezone offset,2019-09-07T13:47:30+05:30,ISO 8601
+ISO 8601,Duration Format,P[n]Y[n]M[n]DT[n]H[n]M[n]S,P3Y6M4DT12H30M5S,ISO 8601
+ISO 8601,Week Date,YYYY-W[WW]-D format,2019-W37-6,ISO 8601
+ISO 8601,Ordinal Date,YYYY-DDD format,2019-250,ISO 8601
+RFC 3339,Full Date-Time,Internet timestamp format,2002-10-02T10:00:00-05:00,RFC 3339
+RFC 3339,UTC Format,Internet timestamp with Z,2002-10-02T15:00:00Z,RFC 3339
+RFC 3339,With Fractional Seconds,Timestamp with subseconds,2002-10-02T15:00:00.05Z,RFC 3339
+RFC 3339,Space Separated,Date and time separated by space,2019-10-12 14:20:50.52+07:00,RFC 3339
+Unix/Epoch Time,Unix Timestamp (Seconds),"Seconds since Jan 1, 1970 UTC",1495245009,Unix Time
+Unix/Epoch Time,Unix Timestamp (Milliseconds),"Milliseconds since Jan 1, 1970 UTC",1495245009655,Unix Time
+Unix/Epoch Time,Unix Timestamp (Microseconds),"Microseconds since Jan 1, 1970 UTC",1495245009655123,Unix Time
+Unix/Epoch Time,Unix Timestamp (Nanoseconds),"Nanoseconds since Jan 1, 1970 UTC",1495245009655123456,Unix Time
+Julian Date,Julian Day Number,"Days since Jan 1, 4713 BC",2451545,Time Standard
+Julian Date,Julian Date,Julian day + fraction of day,2451545.0,Time Standard
+Julian Date,Modified Julian Day (MJD),JD - 2400000.5,51544.5,Time Standard
+Clock Formats,12-Hour Format,1-12 hours with AM/PM,3:30 PM,12-Hour Clock
+Clock Formats,24-Hour Format,00-23 hours,15:30,24-Hour Clock
+Clock Formats,AM (Ante Meridiem),Before noon (midnight to 11:59 AM),9:30 AM,12-Hour Clock
+Clock Formats,PM (Post Meridiem),After noon (12:00 PM to 11:59 PM),9:30 PM,12-Hour Clock
+Time Zone Abbreviations,UTC,Coordinated Universal Time,UTC+0,Time Zones
+Time Zone Abbreviations,GMT,Greenwich Mean Time,UTC+0,Time Zones
+Time Zone Abbreviations,EST,Eastern Standard Time,UTC-5,Time Zones
+Time Zone Abbreviations,EDT,Eastern Daylight Time,UTC-4,Time Zones
+Time Zone Abbreviations,CST,Central Standard Time,UTC-6,Time Zones
+Time Zone Abbreviations,CDT,Central Daylight Time,UTC-5,Time Zones
+Time Zone Abbreviations,MST,Mountain Standard Time,UTC-7,Time Zones
+Time Zone Abbreviations,MDT,Mountain Daylight Time,UTC-6,Time Zones
+Time Zone Abbreviations,PST,Pacific Standard Time,UTC-8,Time Zones
+Time Zone Abbreviations,PDT,Pacific Daylight Time,UTC-7,Time Zones
+Time Zone Abbreviations,IST,Indian Standard Time,UTC+5:30,Time Zones
+Time Zone Abbreviations,JST,Japan Standard Time,UTC+9,Time Zones
+Time Zone Abbreviations,AEST,Australian Eastern Standard Time,UTC+10,Time Zones
+Time Zone Abbreviations,CET,Central European Time,UTC+1,Time Zones
+Time Zone Abbreviations,EET,Eastern European Time,UTC+2,Time Zones
+Time Zone Abbreviations,WET,Western European Time,UTC+0,Time Zones
+Historical/Regional,Railway Time,British railway standard time (GMT),GMT,Standard Time
+Historical/Regional,Allegheny Time,Early US railroad time system,Pittsburgh-based time,Standard Time
+Historical/Regional,Amsterdam Time,Dutch time standard (GMT+0:19:32),GMT+0:19:32,Standard Time
+Historical/Regional,Wellington Time,New Zealand's first standard time,GMT+11:30,Standard Time
+Historical/Regional,Newfoundland Time,Half-hour offset time zone,GMT-3:30,Standard Time
+Programming/System,System.currentTimeMillis(),Java system time in milliseconds,1495245009655,Programming
+Programming/System,Date Object,JavaScript Date object,new Date(),Programming
+Programming/System,LocalDateTime,Java time without timezone,2019-09-07T13:47:30,Programming
+Programming/System,ZonedDateTime,Java time with timezone,2019-09-07T13:47:30+05:30[Asia/Kolkata],Programming

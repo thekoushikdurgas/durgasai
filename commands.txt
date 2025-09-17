@@ -1,0 +1,117 @@
+# DurgasAI - Installation and Run Commands
+
+# === QUICK START ===
+# 1. Install and setup
+python install.py
+
+# 2. Run the application  
+python run.py
+# or
+streamlit run app.py
+# or
+python -m streamlit run main.py
+
+# === DETAILED INSTALLATION ===
+# Manual installation steps
+pip install -r requirements.txt
+python install.py
+
+# === RUNNING THE APPLICATION ===
+# Primary methods
+streamlit run app.py
+python -m streamlit run main.py
+
+# With custom port
+streamlit run app.py --server.port 8502
+
+# With custom host (for remote access)
+streamlit run app.py --server.address 0.0.0.0
+
+# === DEVELOPMENT COMMANDS ===
+# Clean Python cache
+python3 -Bc "import pathlib; [p.unlink() for p in pathlib.Path('.').rglob('*.py[co]')]"
+python3 -Bc "import pathlib; [p.rmdir() for p in pathlib.Path('.').rglob('__pycache__')]"
+
+
+# Code formatting
+black utils/ ui/ main.py app.py
+
+# Linting
+flake8 utils/ ui/ main.py app.py
+
+# === TESTING ===
+# Run tests
+python -m pytest tests/
+
+# Test individual components
+python -c "from utils.vector_db import vector_db_manager; print(vector_db_manager.get_collection_info())"
+python -c "from utils.template_manager import template_manager; print(len(template_manager.get_all_templates()))"
+
+# === MAINTENANCE ===
+# Clear vector database
+python -c "from utils.vector_db import vector_db_manager; vector_db_manager.clear_collection()"
+
+# Clear chat sessions
+rm -rf output/sessions/*
+
+# Clear logs
+rm -rf output/logs/*
+
+# === DOCKER DEPLOYMENT ===
+# Build Docker image
+docker build -t durgasai .
+
+# Run with Docker
+docker run -p 8501:8501 -v $(pwd)/config:/app/config -v $(pwd)/output:/app/output durgasai
+
+# === ENVIRONMENT SETUP ===
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+.venv\Scripts\activate     # Windows
+
+# Install in development mode
+pip install -e .
+
+# === BACKUP AND RESTORE ===
+# Backup user data
+tar -czf backup_$(date +%Y%m%d).tar.gz output/ vector_db/ config/
+
+# Restore from backup
+tar -xzf backup_YYYYMMDD.tar.gz
+
+
+git init
+git add .
+git commit -m "9-9-2025"
+git remote add origin https://github.com/thekoushikdurgas/durgasai.git
+git branch -M main
+git push -u origin main -f
+
+
+git init
+git remote add origin https://github.com/thekoushikdurgas/durgasai.git
+git branch -M main
+
+
+
+git add .
+git commit -m "10/7/2025"
+git push -u origin main -f
+
+git config --global user.email "koushik.btech.cse.19@nitap.ac.in"
+git config --global user.name "thekoushikdurgas"
+
+check my codebase flow of session creation of my app
+
+now check all st.session_state key are used in my codebase can you give me list of keys in st.session_state
+
+@chat_interface.py  break into ui part  @ui/  and utils in @utils/  properly, Learn, understand, and analyse this deeply, and then break your tasks into smaller tasks.
+
+onclick="
+    // Trigger the hidden button click
+    const button = document.querySelector('button[data-testid=\"baseButton-secondary\"][aria-label=\"{template_id} Select\"]');
+    if (button) {
+        button.click();
+    }
+"

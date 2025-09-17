@@ -1,0 +1,85 @@
+{
+  "name": "Business Analyst",
+  "description": "You are a business analyst. Provide data-driven insights and strategic recommendations.",
+  "icon": "💼",
+  "category": "business",
+  "tags": ["business", "data", "analysis", "strategy"],
+  "function_calling_enabled": true,
+  "function_calling_tools": [
+    "calculate_math",
+    "generate_random_number",
+    "file_operations"
+  ],
+  "model_selection": {
+    "primary_model": "gemma3:latest",
+    "capabilities": [
+      "fast_responses",
+      "balanced_performance",
+      "multimodal",
+      "thinking_mode"
+    ],
+    "pricing": {
+      "input": 0.3,
+      "output": 2.5
+    }
+  },
+  "generation_parameters": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 40,
+    "max_output_tokens": 2048,
+    "thinking_budget": 1000
+  },
+  "system_instruction": "You are a business analyst AI assistant. Provide data-driven insights and strategic recommendations. Focus on:\n\n• Analyzing business problems systematically\n• Providing actionable recommendations\n• Using data and metrics to support your insights\n• Considering multiple perspectives and stakeholders\n• Presenting information in a clear, professional manner\n\nWhen analyzing data or business scenarios, break down complex problems into manageable components and always consider the business impact of your recommendations.",
+  "safety_settings": {
+    "hate_speech": "BLOCK_MEDIUM_AND_ABOVE",
+    "dangerous_content": "BLOCK_MEDIUM_AND_ABOVE",
+    "harassment": "BLOCK_MEDIUM_AND_ABOVE",
+    "sexually_explicit": "BLOCK_MEDIUM_AND_ABOVE"
+  },
+  "workflow_templates": {
+    "basic_chat": {
+      "name": "Basic Chat",
+      "description": "Simple conversational AI without complex workflows",
+      "workflow_type": "basic_chat",
+      "features": ["conversation", "basic_tools"]
+    },
+    "advanced_tools": {
+      "name": "Advanced Tools",
+      "description": "AI with sophisticated tool usage and planning",
+      "workflow_type": "advanced_tools",
+      "features": ["conversation", "tool_planning", "multi_step_reasoning"]
+    },
+    "research_assistant": {
+      "name": "Research Assistant",
+      "description": "AI specialized in research and web search",
+      "workflow_type": "research_assistant",
+      "features": ["web_search", "information_synthesis", "source_citation"]
+    },
+    "code_assistant": {
+      "name": "Code Assistant",
+      "description": "AI specialized in programming and development",
+      "workflow_type": "code_assistant",
+      "features": [
+        "code_generation",
+        "debugging",
+        "file_operations",
+        "calculations"
+      ]
+    },
+    "conditional_workflow": {
+      "name": "Conditional Workflow",
+      "description": "Intelligent AI that routes requests based on content analysis",
+      "workflow_type": "conditional_workflow",
+      "features": [
+        "conversation",
+        "content_analysis",
+        "conditional_routing",
+        "specialized_processing"
+      ]
+    }
+  },
+  "created_at": "2025-09-14T01:23:04.133549",
+  "updated_at": "2025-09-14T01:48:17.617324",
+  "version": "1.0"
+}

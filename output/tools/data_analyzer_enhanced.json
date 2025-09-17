@@ -1,0 +1,74 @@
+{
+  "id": "data_analyzer_enhanced_001",
+  "name": "data_analyzer_enhanced",
+  "description": "Advanced data analysis tool demonstrating input/output parameter structure",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "analysis",
+  "status": "enabled",
+  "security_level": "medium",
+  "function_name": "data_analyzer_enhanced",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "dataset",
+      "type": "array",
+      "item_type": "number",
+      "description": "Array of numerical data points to analyze",
+      "required": true
+    },
+    {
+      "name": "analysis_type",
+      "type": "string",
+      "description": "Type of analysis: basic, detailed, or statistical",
+      "required": true
+    },
+    {
+      "name": "include_visualization",
+      "type": "boolean",
+      "description": "Whether to include visualization data",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "summary",
+      "type": "object",
+      "description": "Statistical summary of the dataset",
+      "format": "json"
+    },
+    {
+      "name": "analysis_report",
+      "type": "string",
+      "description": "Detailed analysis report",
+      "format": "markdown"
+    },
+    {
+      "name": "data_quality_score",
+      "type": "number",
+      "description": "Quality score of the input data (0-100)"
+    },
+    {
+      "name": "recommendations",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of recommendations based on analysis",
+      "format": "plain_text"
+    }
+  ],
+  "code": "data_analyzer_enhanced.py",
+  "dependencies": [],
+  "tags": [
+    "analysis",
+    "data",
+    "statistics",
+    "math"
+  ],
+  "created_at": "2025-09-12T04:06:33.873322",
+  "updated_at": "2025-09-12T04:06:33.873331",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}
