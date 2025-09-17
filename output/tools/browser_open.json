@@ -1,0 +1,70 @@
+{
+  "id": "browser_open_001",
+  "name": "Browser Open",
+  "description": "Open and read content from a web page or document. This tool can access specific URLs or document IDs to extract detailed information.",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "research",
+  "status": "enabled",
+  "security_level": "high",
+  "function_name": "browser_open",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Document ID or URL to open (use -1 for latest)",
+      "required": true
+    },
+    {
+      "name": "cursor",
+      "type": "integer",
+      "description": "Starting position in the document (default: -1 for beginning)",
+      "required": false
+    },
+    {
+      "name": "loc",
+      "type": "integer",
+      "description": "Specific location to jump to (default: -1)",
+      "required": false
+    },
+    {
+      "name": "num_lines",
+      "type": "integer",
+      "description": "Number of lines to read (default: -1 for all)",
+      "required": false
+    },
+    {
+      "name": "view_source",
+      "type": "boolean",
+      "description": "Whether to view the HTML source code (default: false)",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "content",
+      "type": "string",
+      "description": "Content of the opened page or document",
+      "format": "text"
+    }
+  ],
+  "code": "browser_open.py",
+  "dependencies": [
+    "gpt-oss",
+    "openai-harmony"
+  ],
+  "tags": [
+    "web",
+    "browser",
+    "content",
+    "research"
+  ],
+  "created_at": "2025-09-12T04:06:33.868496",
+  "updated_at": "2025-09-12T04:06:33.868505",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

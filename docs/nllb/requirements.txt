@@ -1,0 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cu113
+transformers
+torch
+gradio==4.32.2
+spaces
+nltk
+sacremoses
+stopes[mono] @ git+https://github.com/facebookresearch/stopes@better-sentence-splitters
