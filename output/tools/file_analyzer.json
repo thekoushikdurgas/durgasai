@@ -1,0 +1,67 @@
+{
+  "id": "file_analyzer_001",
+  "name": "file_analyzer",
+  "description": "Analyze uploaded files to extract information and content",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "medium",
+  "function_name": "file_analyzer",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "uploaded_file",
+      "type": "file",
+      "description": "File to analyze (supports text, JSON, CSV, and image files)",
+      "required": true
+    },
+    {
+      "name": "analysis_type",
+      "type": "string",
+      "description": "Type of analysis: basic, content, metadata",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "file_info",
+      "type": "object",
+      "description": "Basic file information (name, size, type)",
+      "format": "json"
+    },
+    {
+      "name": "content_preview",
+      "type": "string",
+      "description": "Preview of file content (first 500 characters)",
+      "format": "plain_text"
+    },
+    {
+      "name": "analysis_report",
+      "type": "string",
+      "description": "Detailed analysis report based on file type",
+      "format": "markdown"
+    },
+    {
+      "name": "file_stats",
+      "type": "object",
+      "description": "File statistics (line count, word count, etc.)",
+      "format": "json"
+    }
+  ],
+  "code": "file_analyzer.py",
+  "dependencies": [],
+  "tags": [
+    "file",
+    "io",
+    "analysis",
+    "utility"
+  ],
+  "created_at": "2025-09-12T04:06:33.875011",
+  "updated_at": "2025-09-12T04:06:33.875021",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

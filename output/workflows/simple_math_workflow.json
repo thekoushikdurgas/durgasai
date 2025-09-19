@@ -1,0 +1,65 @@
+{
+  "name": "simple_math_workflow",
+  "description": "A simple workflow that adds two numbers and then multiplies the result",
+  "input_parameters": [
+    {
+      "name": "first_number",
+      "type": "integer",
+      "description": "First number to add",
+      "required": true
+    },
+    {
+      "name": "second_number",
+      "type": "integer",
+      "description": "Second number to add",
+      "required": true
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "sum_result",
+      "type": "integer",
+      "description": "Result of addition"
+    },
+    {
+      "name": "final_result",
+      "type": "integer",
+      "description": "Result of multiplication"
+    }
+  ],
+  "steps": [
+    {
+      "name": "add_numbers",
+      "tool": "add_two_numbers",
+      "inputs": {
+        "a": {
+          "type": "param",
+          "name": "first_number"
+        },
+        "b": {
+          "type": "param",
+          "name": "second_number"
+        }
+      }
+    },
+    {
+      "name": "multiply_result",
+      "tool": "calculate_math",
+      "inputs": {
+        "expression": {
+          "type": "ref",
+          "step": 0,
+          "output": "result"
+        },
+        "operation": {
+          "type": "const",
+          "value": "*"
+        },
+        "value": {
+          "type": "const",
+          "value": 2
+        }
+      }
+    }
+  ]
+}

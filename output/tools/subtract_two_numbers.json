@@ -1,0 +1,48 @@
+{
+  "id": "subtract_two_numbers_001",
+  "name": "subtract_two_numbers",
+  "description": "Subtract two numbers",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "low",
+  "function_name": "subtract_two_numbers",
+  "return_type": "integer",
+  "input_parameters": [
+    {
+      "name": "a",
+      "type": "integer",
+      "description": "The first number",
+      "required": true
+    },
+    {
+      "name": "b",
+      "type": "integer",
+      "description": "The second number",
+      "required": true
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "result",
+      "type": "integer",
+      "description": "The difference of the two numbers"
+    }
+  ],
+  "code": "subtract_two_numbers.py",
+  "dependencies": [],
+  "tags": [
+    "math",
+    "arithmetic",
+    "subtraction",
+    "utility"
+  ],
+  "created_at": "2025-09-12T04:06:33.886544",
+  "updated_at": "2025-09-12T04:06:33.886552",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

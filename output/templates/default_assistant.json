@@ -1,0 +1,90 @@
+{
+  "name": "Default Assistant",
+  "description": "A helpful, general-purpose AI assistant for everyday tasks.",
+  "icon": "🤖",
+  "category": "general",
+  "tags": [
+    "general",
+    "helpful",
+    "assistant",
+    "versatile"
+  ],
+  "function_calling_enabled": true,
+  "function_calling_tools": [
+    "get_current_time",
+    "calculate_math",
+    "generate_random_number"
+  ],
+  "model_selection": {
+    "primary_model": "gemma3:latest",
+    "capabilities": [
+      "fast_responses",
+      "balanced_performance",
+      "multimodal",
+      "thinking_mode"
+    ],
+    "pricing": {
+      "input": 0.3,
+      "output": 2.5
+    }
+  },
+  "generation_parameters": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 40,
+    "max_output_tokens": 2048,
+    "thinking_budget": 0
+  },
+  "system_instruction": "You are a helpful AI assistant. Be concise, accurate, and friendly in your responses. Always strive to:\n\n• Provide clear and helpful answers\n• Be respectful and professional\n• Ask clarifying questions when needed\n• Offer practical solutions\n• Admit when you don't know something\n\nTailor your communication style to match the user's needs and maintain a positive, supportive tone throughout the conversation.",
+  "safety_settings": {
+    "hate_speech": "BLOCK_MEDIUM_AND_ABOVE",
+    "dangerous_content": "BLOCK_MEDIUM_AND_ABOVE",
+    "harassment": "BLOCK_MEDIUM_AND_ABOVE",
+    "sexually_explicit": "BLOCK_MEDIUM_AND_ABOVE"
+  },
+  "workflow_templates": {
+    "basic_chat": {
+      "name": "Basic Chat",
+      "description": "Simple conversational AI without complex workflows",
+      "workflow_type": "basic_chat",
+      "features": ["conversation", "basic_tools"]
+    },
+    "advanced_tools": {
+      "name": "Advanced Tools",
+      "description": "AI with sophisticated tool usage and planning",
+      "workflow_type": "advanced_tools",
+      "features": ["conversation", "tool_planning", "multi_step_reasoning"]
+    },
+    "research_assistant": {
+      "name": "Research Assistant",
+      "description": "AI specialized in research and web search",
+      "workflow_type": "research_assistant",
+      "features": ["web_search", "information_synthesis", "source_citation"]
+    },
+    "code_assistant": {
+      "name": "Code Assistant",
+      "description": "AI specialized in programming and development",
+      "workflow_type": "code_assistant",
+      "features": [
+        "code_generation",
+        "debugging",
+        "file_operations",
+        "calculations"
+      ]
+    },
+    "conditional_workflow": {
+      "name": "Conditional Workflow",
+      "description": "Intelligent AI that routes requests based on content analysis",
+      "workflow_type": "conditional_workflow",
+      "features": [
+        "conversation",
+        "content_analysis",
+        "conditional_routing",
+        "specialized_processing"
+      ]
+    }
+  },
+  "created_at": "2025-09-14T01:26:58.237720",
+  "updated_at": "2025-09-14T01:26:58.237728",
+  "version": "1.0"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "file_review_pipeline",
+  "description": "Analyze an uploaded file and then summarize task statuses based on findings.",
+  "input_parameters": [
+    { "name": "uploaded_file", "type": "file", "description": "File to analyze", "required": false },
+    { "name": "analysis_type", "type": "string", "description": "content or metadata", "required": false }
+  ],
+  "output_parameters": [
+    { "name": "file_info", "type": "object", "format": "json", "description": "File info" },
+    { "name": "analysis_report", "type": "string", "format": "markdown", "description": "Detailed report" },
+    { "name": "completion_summary", "type": "object", "format": "json", "description": "Derived task summary" }
+  ],
+  "steps": [
+    {
+      "name": "analyze_file",
+      "tool": "file_analyzer",
+      "inputs": {
+        "uploaded_file": { "type": "param", "name": "uploaded_file" },
+        "analysis_type": { "type": "param", "name": "analysis_type" }
+      }
+    },
+    {
+      "name": "manage_tasks",
+      "tool": "task_list_manager",
+      "inputs": {
+        "task_names": {
+          "type": "const",
+          "value": ["Parse file", "Generate report", "Review content"]
+        },
+        "completion_status": {
+          "type": "const",
+          "value": [true, true, false]
+        },
+        "show_summary": { "type": "const", "value": true }
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,147 @@
+{
+    "name": "uso_image_generator",
+    "description": "Generate high-quality images using USO (Unified Style-Subject-driven Optimization) with advanced style and subject control. Supports multiple generation modes including identity-driven, style-driven, and multi-style generation.",
+    "function_name": "generate_uso_image",
+    "input_parameters": [
+        {
+            "name": "prompt",
+            "type": "string",
+            "description": "Text description of the image to generate",
+            "required": true,
+            "example": "A beautiful woman in a garden"
+        },
+        {
+            "name": "generation_mode",
+            "type": "string",
+            "description": "Type of generation mode",
+            "required": false,
+            "default": "Text-to-image",
+            "enum": ["Identity-driven", "Subject-driven", "Style-driven", "Style-subject-driven (layout-preserved)", "Style-subject-driven (layout-shifted)", "Multi-style-driven", "Text-to-image"]
+        },
+        {
+            "name": "width",
+            "type": "integer",
+            "description": "Width of the generated image",
+            "required": false,
+            "default": 1024,
+            "minimum": 512,
+            "maximum": 1536
+        },
+        {
+            "name": "height",
+            "type": "integer", 
+            "description": "Height of the generated image",
+            "required": false,
+            "default": 1024,
+            "minimum": 512,
+            "maximum": 1536
+        },
+        {
+            "name": "guidance",
+            "type": "number",
+            "description": "Guidance scale for generation (higher = more prompt adherence)",
+            "required": false,
+            "default": 4.0,
+            "minimum": 1.0,
+            "maximum": 10.0
+        },
+        {
+            "name": "num_steps",
+            "type": "integer",
+            "description": "Number of denoising steps",
+            "required": false,
+            "default": 25,
+            "minimum": 1,
+            "maximum": 50
+        },
+        {
+            "name": "seed",
+            "type": "integer",
+            "description": "Random seed for reproducible generation (-1 for random)",
+            "required": false,
+            "default": -1
+        },
+        {
+            "name": "content_image_path",
+            "type": "string",
+            "description": "Path to content/subject reference image",
+            "required": false
+        },
+        {
+            "name": "style_image_path",
+            "type": "string",
+            "description": "Path to style reference image",
+            "required": false
+        },
+        {
+            "name": "extra_style_image_path",
+            "type": "string",
+            "description": "Path to additional style reference image for multi-style generation",
+            "required": false
+        }
+    ],
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean",
+                "description": "Whether the image generation was successful"
+            },
+            "image_path": {
+                "type": "string",
+                "description": "Path to the generated image file"
+            },
+            "generation_info": {
+                "type": "object",
+                "description": "Information about the generation process",
+                "properties": {
+                    "prompt": {"type": "string"},
+                    "mode": {"type": "string"},
+                    "seed": {"type": "integer"},
+                    "width": {"type": "integer"},
+                    "height": {"type": "integer"},
+                    "guidance": {"type": "number"},
+                    "num_steps": {"type": "integer"}
+                }
+            },
+            "error": {
+                "type": "string",
+                "description": "Error message if generation failed"
+            }
+        }
+    },
+    "code": "uso_image_generator.py",
+    "category": "AI Generation",
+    "tags": ["image", "generation", "ai", "flux", "uso", "style", "subject"],
+    "author": "DurgasAI",
+    "version": "1.0.0",
+    "requirements": ["torch", "PIL", "transformers", "diffusers"],
+    "usage_examples": [
+        {
+            "description": "Generate a basic image from text",
+            "parameters": {
+                "prompt": "A beautiful landscape with mountains and lake",
+                "generation_mode": "Text-to-image"
+            }
+        },
+        {
+            "description": "Generate image with style reference",
+            "parameters": {
+                "prompt": "A cat sitting on a chair",
+                "generation_mode": "Style-driven",
+                "style_image_path": "path/to/style_reference.jpg"
+            }
+        },
+        {
+            "description": "Generate high-resolution image with custom settings",
+            "parameters": {
+                "prompt": "A futuristic cityscape at night",
+                "width": 1536,
+                "height": 1024,
+                "guidance": 6.0,
+                "num_steps": 35,
+                "seed": 12345
+            }
+        }
+    ]
+}

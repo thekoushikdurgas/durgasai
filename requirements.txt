@@ -1,0 +1,160 @@
+# DurgasAI - AI Agent Application Requirements
+# Core Streamlit and web framework
+streamlit>=1.28.0
+
+# LangChain ecosystem
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.38
+langchain-huggingface>=0.0.3
+langsmith>=0.1.57
+
+# HuggingFace ecosystem
+transformers>=4.35.0
+huggingface-hub>=0.19.0
+datasets>=2.14.0
+tokenizers>=0.15.0
+accelerate>=0.21.0
+sentencepiece>=0.1.99
+
+# PyTorch ecosystem (for local models)
+torch>=2.0.0
+torchaudio>=2.0.0
+torchvision>=0.15.0
+
+# Optional: CUDA support (uncomment if using GPU)
+# torch>=2.0.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+# torchaudio>=2.0.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+# torchvision>=0.15.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+
+# Model optimization (optional but recommended)
+bitsandbytes>=0.41.0
+optimum>=1.14.0
+
+# HTTP requests and API handling
+requests>=2.28.0
+httpx>=0.24.0
+aiohttp>=3.8.0
+urllib3>=2.0.0
+
+# Data handling and utilities
+numpy>=1.24.0
+pandas>=2.0.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pydantic-core>=2.0.0
+
+# JSON and data serialization
+orjson>=3.9.0
+jsonschema>=4.17.0
+
+# Date and time handling
+python-dateutil>=2.8.0
+pytz>=2023.3
+
+# Text processing and NLP utilities
+regex>=2023.6.0
+nltk>=3.8.0
+spacy>=3.6.0
+
+# Async and concurrency
+asyncio-throttle>=1.0.0
+aiofiles>=23.0.0
+
+# Logging and monitoring
+loguru>=0.7.0
+structlog>=23.1.0
+
+# Configuration and environment
+click>=8.1.0
+typer>=0.9.0
+python-multipart>=0.0.6
+
+# Development and testing dependencies (uncomment for development)
+# pytest>=7.4.0
+# pytest-asyncio>=0.21.0
+# pytest-mock>=3.11.0
+# black>=23.7.0
+# isort>=5.12.0
+# flake8>=6.0.0
+# mypy>=1.5.0
+
+# Optional: Additional ML/AI libraries (uncomment if needed)
+# scikit-learn>=1.3.0
+# matplotlib>=3.7.0
+# plotly>=5.15.0
+# seaborn>=0.12.0
+
+# Optional: Database support (uncomment if needed)
+# sqlalchemy>=2.0.0
+
+# Optional: Caching (uncomment if needed)
+# redis>=4.6.0
+# diskcache>=5.6.0
+
+# Web scraping and content processing (uncomment if needed)
+# beautifulsoup4>=4.12.0
+# lxml>=4.9.0
+# html5lib>=1.1
+
+# Security and authentication (uncomment if needed)
+# cryptography>=41.0.0
+# passlib>=1.7.0
+# python-jose>=3.3.0
+
+# Memory optimization (uncomment if needed)
+# psutil>=5.9.0
+# memory-profiler>=0.61.0
+
+# Progress bars and UI enhancements
+tqdm>=4.65.0
+# rich>=13.5.0
+
+# API documentation (uncomment if adding API endpoints)
+# fastapi>=0.100.0
+# uvicorn>=0.23.0
+
+# Image processing (uncomment if needed)
+# pillow>=10.0.0
+# opencv-python>=4.8.0
+
+# Audio processing (uncomment for voice features)
+# soundfile>=0.12.0
+# librosa>=0.10.0
+
+# Export formats (uncomment if needed)
+# openpyxl>=3.1.0
+# xlsxwriter>=3.1.0
+
+# Monitoring and analytics (uncomment if needed)
+# prometheus-client>=0.17.0
+# grafana-api>=1.0.0
+
+# Version information
+# Python>=3.8.0  # Minimum Python version required
+
+# Platform-specific dependencies
+# Windows
+# pywin32>=306; sys_platform == "win32"
+
+# macOS
+# pyobjc>=9.2; sys_platform == "darwin"
+
+# Linux
+# python3-dev; sys_platform == "linux"
+
+# Additional notes:
+# 1. For GPU support, install appropriate CUDA versions
+# 2. For production deployment, consider adding gunicorn or similar WSGI server
+# 3. For containerization, add docker-related dependencies
+# 4. For cloud deployment, add cloud provider specific SDKs (AWS, GCP, Azure)
+
+# Optional cloud dependencies (uncomment as needed):
+# boto3>=1.28.0          # AWS SDK
+# google-cloud>=0.34.0   # Google Cloud SDK  
+# azure-sdk>=1.0.0       # Azure SDK
+
+# Optional monitoring and logging services:
+# sentry-sdk>=1.30.0     # Error tracking
+# wandb>=0.15.0          # Experiment tracking
+# mlflow>=2.5.0          # ML lifecycle management
