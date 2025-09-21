@@ -1,0 +1,20 @@
+{
+  "model_id": "google/gemma-2-2b",
+  "vocab_size": 256000,
+  "model_max_length": 1000000000000000019884624838656,
+  "is_fast": true,
+  "special_tokens": {
+    "bos_token": "<bos>",
+    "eos_token": "<eos>",
+    "pad_token": "<pad>",
+    "unk_token": "<unk>"
+  },
+  "load_time": 9.572230339050293,
+  "last_used": 1758467536.2956,
+  "cache_key": "16208c431bf6cd7eb0bf5a868c6aa854",
+  "tokenizer_type": "GemmaTokenizerFast",
+  "supports_batch": true,
+  "multimodal_support": true,
+  "custom_tokens": null,
+  "tokenizer_path": "output\\cache\\tokenizers\\16208c431bf6cd7eb0bf5a868c6aa854"
+}

@@ -1,0 +1,205 @@
+{
+  "id": "google_agent_search_001",
+  "name": "Google Agent Search",
+  "description": "Advanced web search tool with AI-powered analysis and response generation. Combines multiple search providers (Tavily, SerpAPI) with intelligent content extraction and comprehensive answer synthesis.",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "research",
+  "status": "enabled",
+  "security_level": "high",
+  "function_name": "google_agent_search",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "query",
+      "type": "string",
+      "description": "Search query to research and analyze",
+      "required": true,
+      "validation": {
+        "min_length": 1,
+        "max_length": 500
+      }
+    },
+    {
+      "name": "num_results",
+      "type": "integer",
+      "description": "Number of search results to analyze (1-20)",
+      "required": false,
+      "default": 10,
+      "validation": {
+        "min": 1,
+        "max": 20
+      }
+    },
+    {
+      "name": "model",
+      "type": "string",
+      "description": "AI model to use for response generation",
+      "required": false,
+      "default": "gpt-4",
+      "options": ["gpt-4", "gpt-4-turbo", "gpt-3.5-turbo", "claude-3-sonnet", "claude-3-haiku", "gemini-pro"]
+    },
+    {
+      "name": "temperature",
+      "type": "float",
+      "description": "Response creativity level (0.0-1.0)",
+      "required": false,
+      "default": 0.7,
+      "validation": {
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    {
+      "name": "max_tokens",
+      "type": "integer",
+      "description": "Maximum response length in tokens",
+      "required": false,
+      "default": 2048,
+      "validation": {
+        "min": 256,
+        "max": 4096
+      }
+    },
+    {
+      "name": "search_provider",
+      "type": "string",
+      "description": "Preferred search provider",
+      "required": false,
+      "default": "auto",
+      "options": ["auto", "tavily", "serpapi"]
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "comprehensive_response",
+      "type": "string",
+      "description": "AI-generated comprehensive response with analysis and citations",
+      "format": "markdown"
+    },
+    {
+      "name": "search_results",
+      "type": "array",
+      "item_type": "object",
+      "description": "Raw search results with titles, URLs, snippets, and scores",
+      "format": "json"
+    },
+    {
+      "name": "citations",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of source URLs for citation",
+      "format": "json"
+    },
+    {
+      "name": "metadata",
+      "type": "object",
+      "description": "Search and generation metadata including timestamps and configuration",
+      "format": "json"
+    }
+  ],
+  "code": "google_agent_search.py",
+  "dependencies": [
+    "requests",
+    "trafilatura",
+    "json",
+    "logging"
+  ],
+  "optional_dependencies": [
+    "serpapi",
+    "tavily-python"
+  ],
+  "tags": [
+    "web",
+    "search",
+    "ai",
+    "research",
+    "google",
+    "agent",
+    "analysis",
+    "citations",
+    "comprehensive"
+  ],
+  "created_at": "2024-01-15T10:30:00.000000",
+  "updated_at": "2024-01-15T10:30:00.000000",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0,
+  "configuration": {
+    "requires_api_key": true,
+    "api_providers": ["tavily", "serpapi", "openai", "anthropic", "google"],
+    "fallback_to_mock": true,
+    "content_extraction": true,
+    "ai_analysis": true,
+    "citation_tracking": true,
+    "rate_limits": {
+      "requests_per_minute": 30,
+      "requests_per_hour": 500,
+      "requests_per_day": 2000
+    },
+    "features": {
+      "web_search": true,
+      "content_extraction": true,
+      "ai_synthesis": true,
+      "multi_provider": true,
+      "citation_tracking": true,
+      "fallback_mode": true
+    },
+    "model_support": {
+      "openai": ["gpt-4", "gpt-4-turbo", "gpt-3.5-turbo"],
+      "anthropic": ["claude-3-sonnet", "claude-3-haiku"],
+      "google": ["gemini-pro", "gemini-flash"],
+      "local": ["llama-cpp"]
+    }
+  },
+  "usage_examples": [
+    {
+      "name": "Basic Research Query",
+      "description": "Simple research question with default settings",
+      "input": {
+        "query": "What are the latest developments in quantum computing?"
+      },
+      "expected_output": "Comprehensive response with current quantum computing developments, citations, and analysis"
+    },
+    {
+      "name": "Detailed Technical Analysis",
+      "description": "In-depth technical research with specific model and high result count",
+      "input": {
+        "query": "Machine learning model optimization techniques 2024",
+        "num_results": 15,
+        "model": "gpt-4",
+        "temperature": 0.3,
+        "max_tokens": 3000
+      },
+      "expected_output": "Detailed technical analysis with multiple sources and comprehensive citations"
+    },
+    {
+      "name": "Creative Research",
+      "description": "Creative research with higher temperature for diverse perspectives",
+      "input": {
+        "query": "Future of sustainable energy solutions",
+        "temperature": 0.8,
+        "search_provider": "tavily"
+      },
+      "expected_output": "Creative and diverse analysis of sustainable energy with multiple viewpoints"
+    }
+  ],
+  "troubleshooting": {
+    "common_issues": [
+      {
+        "issue": "No search results returned",
+        "solution": "Check API key configuration for Tavily or SerpAPI"
+      },
+      {
+        "issue": "Response generation fails",
+        "solution": "Verify AI model API keys and rate limits"
+      },
+      {
+        "issue": "Content extraction errors",
+        "solution": "Ensure trafilatura package is installed"
+      }
+    ]
+  }
+}

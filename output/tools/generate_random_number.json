@@ -1,0 +1,60 @@
+{
+  "id": "generate_random_number_001",
+  "name": "generate_random_number",
+  "description": "Generate a random number within a specified range",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "low",
+  "function_name": "generate_random_number",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "min_value",
+      "type": "integer",
+      "description": "Minimum value (inclusive)",
+      "required": false
+    },
+    {
+      "name": "max_value",
+      "type": "integer",
+      "description": "Maximum value (inclusive)",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "random_number",
+      "type": "integer",
+      "description": "The generated random number"
+    },
+    {
+      "name": "range_info",
+      "type": "string",
+      "description": "Information about the range used",
+      "format": "plain_text"
+    },
+    {
+      "name": "generation_status",
+      "type": "string",
+      "description": "Status of the number generation",
+      "format": "plain_text"
+    }
+  ],
+  "code": "generate_random_number.py",
+  "dependencies": [],
+  "tags": [
+    "math",
+    "random",
+    "generation",
+    "utility"
+  ],
+  "created_at": "2025-09-12T04:06:33.878706",
+  "updated_at": "2025-09-12T04:06:33.878714",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

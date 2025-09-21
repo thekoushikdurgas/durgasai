@@ -1,0 +1,1 @@
+2025-09-21 21:13:03,414 | durgasai.debug | INFO | info:217 | DurgasAI logging system initialized | Data: {"session_id": "20250921_211303", "log_directories": {"base": "logs", "debug": "logs\\debug", "performance": "logs\\performance", "sessions": "logs\\sessions"}}

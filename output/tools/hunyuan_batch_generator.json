@@ -1,0 +1,198 @@
+{
+    "name": "hunyuan_batch_generator",
+    "description": "Generate multiple high-resolution 2K images in batch using HunyuanImage-2.1. Supports batch processing with different prompts, aspect ratios, and styles for efficient bulk generation.",
+    "function_name": "generate_hunyuan_batch",
+    "input_parameters": [
+        {
+            "name": "prompts",
+            "type": "array",
+            "description": "List of text prompts for image generation",
+            "required": true,
+            "items": {
+                "type": "string"
+            },
+            "example": ["A beautiful sunset over mountains", "A futuristic city at night", "A peaceful garden"]
+        },
+        {
+            "name": "aspect_ratio",
+            "type": "string",
+            "description": "Aspect ratio for all generated images",
+            "required": false,
+            "default": "1:1",
+            "enum": ["1:1", "16:9", "9:16", "4:3", "3:4", "3:2", "2:3"]
+        },
+        {
+            "name": "use_refiner",
+            "type": "boolean",
+            "description": "Enable refiner model for higher quality",
+            "required": false,
+            "default": true
+        },
+        {
+            "name": "use_prompt_enhancement",
+            "type": "boolean",
+            "description": "Automatically enhance prompts for better results",
+            "required": false,
+            "default": false
+        },
+        {
+            "name": "num_inference_steps",
+            "type": "integer",
+            "description": "Number of inference steps",
+            "required": false,
+            "default": 50,
+            "minimum": 8,
+            "maximum": 50
+        },
+        {
+            "name": "guidance_scale",
+            "type": "number",
+            "description": "Guidance scale for generation",
+            "required": false,
+            "default": 3.5,
+            "minimum": 1.0,
+            "maximum": 10.0
+        },
+        {
+            "name": "seed",
+            "type": "integer",
+            "description": "Random seed for reproducible generation",
+            "required": false
+        },
+        {
+            "name": "use_local",
+            "type": "boolean",
+            "description": "Use local model instead of API",
+            "required": false,
+            "default": false
+        },
+        {
+            "name": "parallel_processing",
+            "type": "boolean",
+            "description": "Process multiple images in parallel (experimental)",
+            "required": false,
+            "default": false
+        },
+        {
+            "name": "output_format",
+            "type": "string",
+            "description": "Output format for generated images",
+            "required": false,
+            "default": "png",
+            "enum": ["png", "jpg", "jpeg"]
+        },
+        {
+            "name": "create_zip",
+            "type": "boolean",
+            "description": "Create a ZIP file containing all generated images",
+            "required": false,
+            "default": false
+        }
+    ],
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean",
+                "description": "Whether the batch generation was successful"
+            },
+            "total_prompts": {
+                "type": "integer",
+                "description": "Total number of prompts processed"
+            },
+            "successful_generations": {
+                "type": "integer",
+                "description": "Number of successful image generations"
+            },
+            "failed_generations": {
+                "type": "integer",
+                "description": "Number of failed image generations"
+            },
+            "generated_images": {
+                "type": "array",
+                "description": "List of successfully generated images",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "prompt": {"type": "string"},
+                        "image_path": {"type": "string"},
+                        "generation_time": {"type": "number"},
+                        "index": {"type": "integer"}
+                    }
+                }
+            },
+            "failed_images": {
+                "type": "array",
+                "description": "List of failed image generations",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "prompt": {"type": "string"},
+                        "error": {"type": "string"},
+                        "index": {"type": "integer"}
+                    }
+                }
+            },
+            "batch_info": {
+                "type": "object",
+                "description": "Information about the batch generation process",
+                "properties": {
+                    "total_time": {"type": "number"},
+                    "average_time_per_image": {"type": "number"},
+                    "aspect_ratio": {"type": "string"},
+                    "use_refiner": {"type": "boolean"},
+                    "zip_file_path": {"type": "string"}
+                }
+            },
+            "error": {
+                "type": "string",
+                "description": "Error message if batch generation failed"
+            }
+        }
+    },
+    "code": "hunyuan_batch_generator.py",
+    "category": "AI Generation",
+    "tags": ["image", "generation", "ai", "hunyuan", "batch", "2k", "high-resolution", "bulk"],
+    "author": "DurgasAI",
+    "version": "1.0.0",
+    "requirements": ["torch", "PIL", "huggingface_hub", "zipfile"],
+    "usage_examples": [
+        {
+            "description": "Generate multiple images with same settings",
+            "parameters": {
+                "prompts": [
+                    "A beautiful sunset over mountains",
+                    "A futuristic city at night",
+                    "A peaceful garden with flowers"
+                ],
+                "aspect_ratio": "1:1",
+                "use_refiner": true
+            }
+        },
+        {
+            "description": "Generate high-resolution landscape images",
+            "parameters": {
+                "prompts": [
+                    "Mountain landscape at dawn",
+                    "Ocean waves crashing on shore",
+                    "Forest with sunlight filtering through trees"
+                ],
+                "aspect_ratio": "16:9",
+                "use_refiner": true,
+                "create_zip": true
+            }
+        },
+        {
+            "description": "Generate portraits with different styles",
+            "parameters": {
+                "prompts": [
+                    "Professional headshot portrait",
+                    "Artistic portrait with dramatic lighting",
+                    "Casual portrait in natural setting"
+                ],
+                "aspect_ratio": "3:4",
+                "use_prompt_enhancement": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "name": "hunyuan_model_manager",
+    "description": "Manage and get information about HunyuanImage-2.1 model. Provides model capabilities, performance metrics, supported configurations, and system requirements.",
+    "function_name": "manage_hunyuan_model",
+    "input_parameters": [
+        {
+            "name": "action",
+            "type": "string",
+            "description": "Action to perform with the HunyuanImage model",
+            "required": true,
+            "enum": [
+                "get_info",
+                "get_capabilities",
+                "get_performance_metrics",
+                "get_supported_aspect_ratios",
+                "check_system_requirements",
+                "test_connection",
+                "get_model_status"
+            ]
+        },
+        {
+            "name": "use_local",
+            "type": "boolean",
+            "description": "Check local model instead of API (for applicable actions)",
+            "required": false,
+            "default": false
+        }
+    ],
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean",
+                "description": "Whether the action was successful"
+            },
+            "result": {
+                "type": "object",
+                "description": "Result data based on the action performed"
+            },
+            "error": {
+                "type": "string",
+                "description": "Error message if action failed"
+            }
+        }
+    },
+    "code": "hunyuan_model_manager.py",
+    "category": "Model Management",
+    "tags": ["model", "management", "hunyuan", "info", "metrics", "status"],
+    "author": "DurgasAI",
+    "version": "1.0.0",
+    "requirements": ["torch", "huggingface_hub"],
+    "usage_examples": [
+        {
+            "description": "Get model information",
+            "parameters": {
+                "action": "get_info"
+            }
+        },
+        {
+            "description": "Check supported aspect ratios",
+            "parameters": {
+                "action": "get_supported_aspect_ratios"
+            }
+        },
+        {
+            "description": "Get performance metrics",
+            "parameters": {
+                "action": "get_performance_metrics"
+            }
+        },
+        {
+            "description": "Test API connection",
+            "parameters": {
+                "action": "test_connection"
+            }
+        },
+        {
+            "description": "Check system requirements for local usage",
+            "parameters": {
+                "action": "check_system_requirements",
+                "use_local": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "text_file_reader_001",
+  "name": "text_file_reader",
+  "description": "Read and process text files",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "medium",
+  "function_name": "text_file_reader",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "text_file",
+      "type": "file",
+      "description": "Text file to read and process",
+      "required": true
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "file_content",
+      "type": "string",
+      "description": "Content of the uploaded text file",
+      "format": "plain_text"
+    },
+    {
+      "name": "file_name",
+      "type": "string",
+      "description": "Name of the uploaded file",
+      "format": "plain_text"
+    },
+    {
+      "name": "file_size",
+      "type": "integer",
+      "description": "Size of the file in bytes"
+    }
+  ],
+  "code": "text_file_reader.py",
+  "dependencies": [],
+  "tags": [
+    "file",
+    "io",
+    "text",
+    "utility"
+  ],
+  "created_at": "2025-09-12T04:06:33.893053",
+  "updated_at": "2025-09-12T04:06:33.893063",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

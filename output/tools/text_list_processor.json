@@ -1,0 +1,62 @@
+{
+  "id": "text_list_processor_001",
+  "name": "text_list_processor",
+  "description": "Process a list of text strings with various operations",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "low",
+  "function_name": "text_list_processor",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "text_list",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of text strings to process",
+      "required": true
+    },
+    {
+      "name": "operation",
+      "type": "string",
+      "description": "Operation to perform: uppercase, lowercase, reverse, sort, unique",
+      "required": true
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "processed_items",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of processed text items",
+      "format": "plain_text"
+    },
+    {
+      "name": "operation_summary",
+      "type": "string",
+      "description": "Summary of the operation performed",
+      "format": "plain_text"
+    },
+    {
+      "name": "item_count",
+      "type": "integer",
+      "description": "Number of items processed"
+    }
+  ],
+  "code": "text_list_processor.py",
+  "dependencies": [],
+  "tags": [
+    "text",
+    "processing",
+    "string",
+    "utility"
+  ],
+  "created_at": "2025-09-12T04:06:33.895354",
+  "updated_at": "2025-09-12T04:06:33.895367",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

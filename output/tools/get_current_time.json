@@ -1,0 +1,251 @@
+{
+  "id": "get_current_time_001",
+  "name": "get_current_time",
+  "description": "Enhanced tool to get current date and time in 70+ formats and standards including ISO 8601, RFC 3339, Unix timestamps, Julian dates, military time, and more",
+  "version": "2.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "low",
+  "function_name": "get_current_time",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "format_type",
+      "type": "string",
+      "description": "Type of time format to return",
+      "required": false,
+      "default": "iso_8601_extended",
+      "options": [
+        "iso_8601_extended",
+        "iso_8601_basic", 
+        "rfc_3339",
+        "unix_epoch",
+        "12_hour_clock",
+        "24_hour_clock",
+        "military_time",
+        "human_readable",
+        "system_formats"
+      ]
+    },
+    {
+      "name": "timezone_offset",
+      "type": "string",
+      "description": "Timezone offset (e.g., '+05:30', '-08:00', 'UTC')",
+      "required": false,
+      "default": "UTC"
+    },
+    {
+      "name": "include_timezone",
+      "type": "boolean",
+      "description": "Whether to include timezone information",
+      "required": false,
+      "default": true
+    },
+    {
+      "name": "precision",
+      "type": "string",
+      "description": "Time precision level",
+      "required": false,
+      "default": "seconds",
+      "options": [
+        "seconds",
+        "milliseconds", 
+        "microseconds",
+        "nanoseconds"
+      ]
+    },
+    {
+      "name": "include_weekday",
+      "type": "boolean",
+      "description": "Whether to include weekday information",
+      "required": false,
+      "default": false
+    },
+    {
+      "name": "include_week_number",
+      "type": "boolean",
+      "description": "Whether to include week number and ISO week date",
+      "required": false,
+      "default": false
+    },
+    {
+      "name": "include_julian_date",
+      "type": "boolean",
+      "description": "Whether to include Julian Day Number and Modified Julian Day",
+      "required": false,
+      "default": false
+    },
+    {
+      "name": "include_epoch_variants",
+      "type": "boolean",
+      "description": "Whether to include various epoch time formats (Unix, JavaScript, Java)",
+      "required": false,
+      "default": false
+    },
+    {
+      "name": "include_historical_formats",
+      "type": "boolean",
+      "description": "Whether to include historical time formats (GMT, Railway Time, etc.)",
+      "required": false,
+      "default": false
+    },
+    {
+      "name": "custom_format_pattern",
+      "type": "string",
+      "description": "Custom strftime pattern for custom formatting (e.g., '%Y-%m-%d %H:%M:%S', '%m/%d/%Y', '%B %d, %Y')",
+      "required": false,
+      "default": null
+    },
+    {
+      "name": "include_common_strings",
+      "type": "boolean",
+      "description": "Whether to include common time string formats (mm/dd, dd/mm, etc.)",
+      "required": false,
+      "default": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "formatted_time",
+      "type": "string",
+      "description": "Primary formatted time based on format_type parameter"
+    },
+    {
+      "name": "timestamp",
+      "type": "number",
+      "description": "Unix timestamp (precision based on precision parameter)"
+    },
+    {
+      "name": "unix_timestamp_seconds",
+      "type": "number",
+      "description": "Unix timestamp in seconds"
+    },
+    {
+      "name": "unix_timestamp_milliseconds",
+      "type": "number",
+      "description": "Unix timestamp in milliseconds"
+    },
+    {
+      "name": "unix_timestamp_microseconds",
+      "type": "number",
+      "description": "Unix timestamp in microseconds"
+    },
+    {
+      "name": "unix_timestamp_nanoseconds",
+      "type": "number",
+      "description": "Unix timestamp in nanoseconds"
+    },
+    {
+      "name": "format_type",
+      "type": "string",
+      "description": "The format type that was used"
+    },
+    {
+      "name": "timezone",
+      "type": "string",
+      "description": "Timezone information"
+    },
+    {
+      "name": "all_formats",
+      "type": "object",
+      "description": "Collection of all major time formats in one object"
+    },
+    {
+      "name": "timezone_info",
+      "type": "object",
+      "description": "Detailed timezone information (when include_timezone is true)"
+    },
+    {
+      "name": "weekday",
+      "type": "string",
+      "description": "Full weekday name (when include_weekday is true)"
+    },
+    {
+      "name": "weekday_short",
+      "type": "string",
+      "description": "Short weekday name (when include_weekday is true)"
+    },
+    {
+      "name": "weekday_number",
+      "type": "number",
+      "description": "Weekday number 0-6 (when include_weekday is true)"
+    },
+    {
+      "name": "week_number",
+      "type": "number",
+      "description": "ISO week number (when include_week_number is true)"
+    },
+    {
+      "name": "year_week",
+      "type": "string",
+      "description": "ISO year-week format (when include_week_number is true)"
+    },
+    {
+      "name": "julian_day_number",
+      "type": "number",
+      "description": "Julian Day Number (when include_julian_date is true)"
+    },
+    {
+      "name": "modified_julian_day",
+      "type": "number",
+      "description": "Modified Julian Day (when include_julian_date is true)"
+    },
+    {
+      "name": "julian_date",
+      "type": "string",
+      "description": "Julian date string (when include_julian_date is true)"
+    },
+    {
+      "name": "epoch_variants",
+      "type": "object",
+      "description": "Various epoch time formats (when include_epoch_variants is true)"
+    },
+    {
+      "name": "historical_formats",
+      "type": "object",
+      "description": "Historical time formats (when include_historical_formats is true)"
+    },
+    {
+      "name": "custom_format_pattern",
+      "type": "string",
+      "description": "The custom format pattern used (when custom_format_pattern is provided)"
+    },
+    {
+      "name": "custom_format_result",
+      "type": "string",
+      "description": "Result of custom format pattern (when custom_format_pattern is provided)"
+    },
+    {
+      "name": "custom_format_error",
+      "type": "string",
+      "description": "Error message if custom format pattern is invalid (when custom_format_pattern is provided)"
+    },
+    {
+      "name": "common_strings",
+      "type": "object",
+      "description": "Common time string formats like mm/dd, dd/mm, etc. (when include_common_strings is true)"
+    }
+  ],
+  "code": "get_current_time.py",
+  "dependencies": [],
+  "tags": [
+    "time",
+    "datetime",
+    "utility",
+    "iso8601",
+    "rfc3339",
+    "unix",
+    "julian",
+    "timezone",
+    "formats",
+    "standards"
+  ],
+  "created_at": "2025-09-12T04:06:33.880193",
+  "updated_at": "2025-01-15T12:00:00.000000",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

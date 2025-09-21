@@ -1,0 +1,73 @@
+{
+  "id": "file_operations_001",
+  "name": "file_operations",
+  "description": "Perform basic file operations (read, write, list files)",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "medium",
+  "function_name": "file_operations",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "operation",
+      "type": "string",
+      "description": "Operation type: read, write, list, or exists",
+      "required": true
+    },
+    {
+      "name": "filename",
+      "type": "string",
+      "description": "File path relative to temp directory",
+      "required": true
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "description": "Content to write (for write operation)",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "operation_result",
+      "type": "string",
+      "description": "Result of the file operation",
+      "format": "plain_text"
+    },
+    {
+      "name": "file_content",
+      "type": "string",
+      "description": "Content of the file (for read operations)",
+      "format": "plain_text"
+    },
+    {
+      "name": "file_list",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of files (for list operations)",
+      "format": "plain_text"
+    },
+    {
+      "name": "operation_status",
+      "type": "string",
+      "description": "Success or error status of the operation",
+      "format": "plain_text"
+    }
+  ],
+  "code": "file_operations.py",
+  "dependencies": [],
+  "tags": [
+    "file",
+    "io",
+    "utility"
+  ],
+  "created_at": "2025-09-12T04:06:33.876922",
+  "updated_at": "2025-09-12T04:06:33.876933",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

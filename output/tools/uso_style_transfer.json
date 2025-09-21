@@ -1,0 +1,103 @@
+{
+    "name": "uso_style_transfer",
+    "description": "Apply artistic style from a reference image to generate new images using USO. Perfect for creating images in specific artistic styles or combining content with desired aesthetics.",
+    "function_name": "apply_uso_style",
+    "input_parameters": [
+        {
+            "name": "prompt",
+            "type": "string",
+            "description": "Description of what to generate with the applied style",
+            "required": true,
+            "example": "A cat sitting in a garden"
+        },
+        {
+            "name": "style_description",
+            "type": "string", 
+            "description": "Description of the desired style (e.g., 'watercolor painting', 'anime style', 'oil painting')",
+            "required": false,
+            "default": "artistic style"
+        },
+        {
+            "name": "style_image_path",
+            "type": "string",
+            "description": "Path to the style reference image",
+            "required": false
+        },
+        {
+            "name": "width",
+            "type": "integer",
+            "description": "Width of generated image",
+            "required": false,
+            "default": 1024,
+            "minimum": 512,
+            "maximum": 1536
+        },
+        {
+            "name": "height", 
+            "type": "integer",
+            "description": "Height of generated image",
+            "required": false,
+            "default": 1024,
+            "minimum": 512,
+            "maximum": 1536
+        },
+        {
+            "name": "style_strength",
+            "type": "number",
+            "description": "How strongly to apply the style (guidance scale)",
+            "required": false,
+            "default": 4.0,
+            "minimum": 1.0,
+            "maximum": 8.0
+        }
+    ],
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean",
+                "description": "Whether the style transfer was successful"
+            },
+            "image_path": {
+                "type": "string",
+                "description": "Path to the generated styled image"
+            },
+            "style_info": {
+                "type": "object",
+                "description": "Information about the applied style",
+                "properties": {
+                    "prompt": {"type": "string"},
+                    "style_description": {"type": "string"},
+                    "style_strength": {"type": "number"}
+                }
+            },
+            "error": {
+                "type": "string",
+                "description": "Error message if style transfer failed"
+            }
+        }
+    },
+    "code": "uso_style_transfer.py",
+    "category": "AI Generation",
+    "tags": ["image", "style", "transfer", "artistic", "uso"],
+    "author": "DurgasAI",
+    "version": "1.0.0",
+    "requirements": ["torch", "PIL", "transformers"],
+    "usage_examples": [
+        {
+            "description": "Apply watercolor style to a landscape",
+            "parameters": {
+                "prompt": "A mountain landscape with lake",
+                "style_description": "watercolor painting style"
+            }
+        },
+        {
+            "description": "Create anime-style character",
+            "parameters": {
+                "prompt": "A young woman with long hair",
+                "style_description": "anime art style",
+                "style_strength": 5.0
+            }
+        }
+    ]
+}

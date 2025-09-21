@@ -1,0 +1,148 @@
+{
+    "name": "outpaint_image",
+    "description": "Extend images intelligently using AI outpainting with Stable Diffusion XL and ControlNet",
+    "category": "image_generation",
+    "version": "1.0.0",
+    "author": "DurgasAI Team",
+    "file_path": "outpaint_tool.py",
+    "function_name": "outpaint_image",
+    "code": "outpaint_tool.py",
+    "parameters": {
+        "image_path": {
+            "type": "string",
+            "description": "Path to input image file (PNG, JPG, JPEG, WebP)",
+            "required": true
+        },
+        "prompt": {
+            "type": "string",
+            "description": "Description of content to generate in extended areas",
+            "required": false,
+            "default": ""
+        },
+        "width": {
+            "type": "integer",
+            "description": "Target width in pixels (720-1536, must be divisible by 8)",
+            "required": false,
+            "default": 1024,
+            "minimum": 720,
+            "maximum": 1536
+        },
+        "height": {
+            "type": "integer",
+            "description": "Target height in pixels (720-1536, must be divisible by 8)",
+            "required": false,
+            "default": 1024,
+            "minimum": 720,
+            "maximum": 1536
+        },
+        "alignment": {
+            "type": "string",
+            "description": "How to align the original image within the new canvas",
+            "required": false,
+            "default": "Middle",
+            "enum": ["Middle", "Left", "Right", "Top", "Bottom"]
+        },
+        "num_inference_steps": {
+            "type": "integer",
+            "description": "Number of generation steps (higher = better quality but slower)",
+            "required": false,
+            "default": 8,
+            "minimum": 4,
+            "maximum": 12
+        },
+        "overlap_percentage": {
+            "type": "integer",
+            "description": "Overlap percentage between original and generated areas for blending",
+            "required": false,
+            "default": 10,
+            "minimum": 1,
+            "maximum": 50
+        },
+        "resize_option": {
+            "type": "string",
+            "description": "How to resize the input image before processing",
+            "required": false,
+            "default": "Full",
+            "enum": ["Full", "50%", "33%", "25%", "Custom"]
+        },
+        "custom_resize_percentage": {
+            "type": "integer",
+            "description": "Custom resize percentage (only used if resize_option is 'Custom')",
+            "required": false,
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100
+        },
+        "overlap_left": {
+            "type": "boolean",
+            "description": "Allow blending on left edge",
+            "required": false,
+            "default": true
+        },
+        "overlap_right": {
+            "type": "boolean",
+            "description": "Allow blending on right edge",
+            "required": false,
+            "default": true
+        },
+        "overlap_top": {
+            "type": "boolean",
+            "description": "Allow blending on top edge",
+            "required": false,
+            "default": true
+        },
+        "overlap_bottom": {
+            "type": "boolean",
+            "description": "Allow blending on bottom edge",
+            "required": false,
+            "default": true
+        }
+    },
+    "examples": [
+        {
+            "description": "Extend landscape photo to 16:9 aspect ratio",
+            "parameters": {
+                "image_path": "landscape.jpg",
+                "prompt": "beautiful mountain landscape, clear blue sky, natural lighting",
+                "width": 1280,
+                "height": 720,
+                "alignment": "Middle",
+                "num_inference_steps": 10
+            }
+        },
+        {
+            "description": "Extend portrait to square format with background",
+            "parameters": {
+                "image_path": "portrait.jpg",
+                "prompt": "professional studio background, soft lighting, minimalist",
+                "width": 1024,
+                "height": 1024,
+                "alignment": "Bottom",
+                "overlap_percentage": 15
+            }
+        },
+        {
+            "description": "Extend architectural photo to vertical format",
+            "parameters": {
+                "image_path": "building.jpg",
+                "prompt": "urban architecture, modern buildings, city skyline",
+                "width": 720,
+                "height": 1280,
+                "alignment": "Top",
+                "resize_option": "75%"
+            }
+        }
+    ],
+    "requirements": [
+        "torch>=2.4.0",
+        "diffusers>=0.32.2",
+        "transformers>=4.43.0",
+        "accelerate>=1.1.1",
+        "opencv-python>=4.8.0",
+        "huggingface-hub>=0.20.0"
+    ],
+    "gpu_required": true,
+    "estimated_time": "30-120 seconds",
+    "output_format": "PNG images with metadata",
+    "tags": ["image", "ai", "outpainting", "stable-diffusion", "controlnet", "extension"]
+}
