@@ -1,0 +1,58 @@
+{
+  "id": "browser_search_001",
+  "name": "Browser Search",
+  "description": "Search the web for information using advanced research capabilities. This tool leverages GPT-OSS browser tools to find relevant web content.",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "research",
+  "status": "enabled",
+  "security_level": "high",
+  "function_name": "browser_search",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "query",
+      "type": "string",
+      "description": "Search query to find information on the web",
+      "required": true
+    },
+    {
+      "name": "topn",
+      "type": "integer",
+      "description": "Number of top results to return (default: 10)",
+      "required": false
+    },
+    {
+      "name": "source",
+      "type": "string",
+      "description": "Specific source to search (optional)",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "results",
+      "type": "string",
+      "description": "Search results with URLs, titles, and snippets",
+      "format": "structured_text"
+    }
+  ],
+  "code": "browser_search.py",
+  "dependencies": [
+    "gpt-oss",
+    "openai-harmony"
+  ],
+  "tags": [
+    "web",
+    "browser",
+    "search",
+    "research"
+  ],
+  "created_at": "2025-09-12T04:06:33.870679",
+  "updated_at": "2025-09-12T04:06:33.870688",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

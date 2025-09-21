@@ -1,0 +1,80 @@
+{
+  "id": "search_web_001",
+  "name": "search_web",
+  "description": "Search the web for information using Tavily API with fallback to mock results",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "information",
+  "status": "enabled",
+  "security_level": "medium",
+  "function_name": "search_web",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "query",
+      "type": "string",
+      "description": "Search query",
+      "required": true
+    },
+    {
+      "name": "num_results",
+      "type": "integer",
+      "description": "Number of results to return (1-10)",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "search_results",
+      "type": "array",
+      "item_type": "object",
+      "description": "List of search result objects with title, URL, and snippet",
+      "format": "json"
+    },
+    {
+      "name": "formatted_results",
+      "type": "string",
+      "description": "Human-readable formatted search results",
+      "format": "markdown"
+    },
+    {
+      "name": "query_processed",
+      "type": "string",
+      "description": "The processed search query",
+      "format": "plain_text"
+    },
+    {
+      "name": "result_count",
+      "type": "integer",
+      "description": "Number of results returned"
+    }
+  ],
+  "code": "search_web.py",
+  "dependencies": [
+    "requests"
+  ],
+  "tags": [
+    "web",
+    "search",
+    "information",
+    "utility",
+    "tavily",
+    "api"
+  ],
+  "created_at": "2025-09-12T04:06:33.885194",
+  "updated_at": "2025-09-12T04:06:33.885203",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0,
+  "configuration": {
+    "requires_api_key": true,
+    "api_provider": "tavily",
+    "fallback_to_mock": true,
+    "rate_limits": {
+      "requests_per_minute": 60,
+      "requests_per_day": 1000
+    }
+  }
+}

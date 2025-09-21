@@ -1,0 +1,102 @@
+/* 
+Component-specific CSS for DurgasAI
+Styles for individual UI components.
+*/
+
+/* ========================================
+   CHAT COMPONENTS
+   ======================================== */
+.chat-container {
+    max-height: 600px;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.chat-message {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-sm) 0;
+    max-width: 80%;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.user-message {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    margin-left: auto;
+    border-left: 4px solid var(--primary-color);
+}
+
+.assistant-message {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    margin-right: auto;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* ========================================
+   MODEL COMPONENTS
+   ======================================== */
+.model-card {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-md) 0;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.model-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.status-success { color: var(--success-color); }
+.status-error { color: var(--error-color); }
+.status-warning { color: var(--warning-color); }
+.status-info { color: var(--info-color); }
+
+/* ========================================
+   COMMON COMPONENTS
+   ======================================== */
+.metrics-container {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-md) 0;
+    box-shadow: var(--box-shadow);
+}
+
+.export-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in { animation: fadeIn 0.5s ease-in; }
+.slide-up { animation: slideUp 0.3s ease-out; }

@@ -1,0 +1,13 @@
+{
+  "performance_stats": {
+    "total_loads": 2,
+    "cache_hits": 5,
+    "cache_misses": 2,
+    "average_load_time": 2.196498155593872,
+    "total_processings": 0,
+    "batch_processings": 0,
+    "error_count": 0,
+    "gpu_processings": 0
+  },
+  "last_updated": 1758467947.844441
+}

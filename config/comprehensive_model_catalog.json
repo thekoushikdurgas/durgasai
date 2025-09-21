@@ -1,0 +1,667 @@
+{
+  "catalog_version": "1.0",
+  "last_updated": "2024-01-15",
+  "total_models": 500000,
+  "categories": {
+    "multimodal": {
+      "title": "Multimodal",
+      "description": "Models that process multiple types of data inputs (text, images, audio, etc.)",
+      "icon": "🎭",
+      "model_count": 7698,
+      "subcategories": {
+        "any_to_any": {
+          "name": "Any-to-Any",
+          "count": 7698,
+          "description": "Models that can process any combination of input modalities",
+          "models": [
+            {
+              "id": "HuggingFaceM4/idefics2-8b",
+              "name": "Idefics2 8B",
+              "description": "Open multimodal model that accepts arbitrary sequences of image and text inputs",
+              "size": "8B",
+              "parameters": 8000000000,
+              "system_requirements": {
+                "gpu_memory": "16GB+",
+                "ram": "32GB+",
+                "storage": "20GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "pillow", "accelerate"]
+              },
+              "use_cases": ["image_analysis", "visual_qa", "ocr", "document_understanding", "visual_reasoning"],
+              "license": "apache-2.0",
+              "tags": ["vision", "multimodal", "instruction_following", "ocr"],
+              "performance_metrics": {
+                "inference_speed": "medium",
+                "accuracy": "high",
+                "memory_efficiency": "medium"
+              },
+              "supported_tasks": [
+                "visual-question-answering",
+                "image-captioning",
+                "document-understanding",
+                "optical-character-recognition"
+              ]
+            },
+            {
+              "id": "HuggingFaceM4/idefics2-8b-chatty",
+              "name": "Idefics2 8B Chatty",
+              "description": "Idefics2-8b fine-tuned for extended conversations with detailed responses",
+              "size": "8B",
+              "parameters": 8000000000,
+              "system_requirements": {
+                "gpu_memory": "16GB+",
+                "ram": "32GB+",
+                "storage": "20GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "pillow", "accelerate"]
+              },
+              "use_cases": ["detailed_image_analysis", "long_form_qa", "storytelling", "extended_conversations"],
+              "license": "apache-2.0",
+              "tags": ["vision", "multimodal", "conversational", "detailed_responses"],
+              "performance_metrics": {
+                "inference_speed": "medium",
+                "accuracy": "high",
+                "memory_efficiency": "medium"
+              },
+              "supported_tasks": [
+                "visual-question-answering",
+                "image-captioning",
+                "detailed-image-analysis",
+                "conversational-ai"
+              ]
+            },
+            {
+              "id": "zai-org/GLM-4.5V",
+              "name": "GLM-4.5V Vision Model",
+              "description": "Cutting-edge reasoning vision language model with advanced multimodal capabilities",
+              "size": "8B",
+              "parameters": 8000000000,
+              "system_requirements": {
+                "gpu_memory": "16GB+",
+                "ram": "32GB+",
+                "storage": "20GB",
+                "cuda": true,
+                "os": ["Linux", "Windows"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "pillow", "accelerate"]
+              },
+              "use_cases": ["image_analysis", "visual_qa", "reasoning", "multimodal_reasoning"],
+              "license": "glm-4.5v-license",
+              "tags": ["vision", "multimodal", "reasoning", "advanced"],
+              "performance_metrics": {
+                "inference_speed": "fast",
+                "accuracy": "very_high",
+                "memory_efficiency": "high"
+              },
+              "supported_tasks": [
+                "visual-question-answering",
+                "image-analysis",
+                "multimodal-reasoning",
+                "visual-reasoning"
+              ]
+            }
+          ]
+        },
+        "audio_text_to_text": {
+          "name": "Audio-Text-to-Text",
+          "count": 126,
+          "description": "Models that process audio and text inputs to produce text outputs",
+          "models": [
+            {
+              "id": "openai/whisper-base",
+              "name": "Whisper Base",
+              "description": "Automatic speech recognition model for transcribing audio to text",
+              "size": "74M",
+              "parameters": 74000000,
+              "system_requirements": {
+                "gpu_memory": "2GB+",
+                "ram": "8GB+",
+                "storage": "1GB",
+                "cuda": false,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "librosa", "soundfile"]
+              },
+              "use_cases": ["speech_recognition", "transcription", "audio_processing"],
+              "license": "mit",
+              "tags": ["audio", "speech_recognition", "transcription", "whisper"],
+              "performance_metrics": {
+                "inference_speed": "fast",
+                "accuracy": "high",
+                "memory_efficiency": "high"
+              },
+              "supported_tasks": [
+                "automatic-speech-recognition",
+                "audio-transcription",
+                "speech-to-text"
+              ]
+            }
+          ]
+        },
+        "document_qa": {
+          "name": "Document Question Answering",
+          "count": 233,
+          "description": "Models that answer questions about document content",
+          "models": []
+        },
+        "visual_document_retrieval": {
+          "name": "Visual Document Retrieval",
+          "count": 89,
+          "description": "Models for retrieving and understanding visual documents",
+          "models": []
+        },
+        "image_text_to_text": {
+          "name": "Image-Text-to-Text",
+          "count": 6549,
+          "description": "Models that process images and text to generate text outputs",
+          "models": []
+        },
+        "video_text_to_text": {
+          "name": "Video-Text-to-Text",
+          "count": 177,
+          "description": "Models that process video and text to generate text outputs",
+          "models": []
+        },
+        "visual_qa": {
+          "name": "Visual Question Answering",
+          "count": 515,
+          "description": "Models that answer questions about images",
+          "models": [
+            {
+              "id": "Salesforce/blip-vqa-base",
+              "name": "BLIP VQA Base",
+              "description": "Visual question answering model for answering questions about images",
+              "size": "224M",
+              "parameters": 224000000,
+              "system_requirements": {
+                "gpu_memory": "4GB+",
+                "ram": "8GB+",
+                "storage": "1GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "pillow"]
+              },
+              "use_cases": ["visual_qa", "image_understanding", "question_answering"],
+              "license": "bsd-3-clause",
+              "tags": ["vision", "vqa", "blip", "question_answering"],
+              "performance_metrics": {
+                "inference_speed": "fast",
+                "accuracy": "high",
+                "memory_efficiency": "high"
+              },
+              "supported_tasks": [
+                "visual-question-answering",
+                "image-understanding",
+                "visual-reasoning"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "natural_language_processing": {
+      "title": "Natural Language Processing",
+      "description": "Models for text-based tasks including classification, generation, and understanding",
+      "icon": "📝",
+      "model_count": 500000,
+      "subcategories": {
+        "feature_extraction": {
+          "name": "Feature Extraction",
+          "count": 14226,
+          "description": "Models for extracting features and embeddings from text",
+          "models": [
+            {
+              "id": "sentence-transformers/all-MiniLM-L6-v2",
+              "name": "All MiniLM L6 v2",
+              "description": "Universal sentence encoder for text embeddings and similarity",
+              "size": "22M",
+              "parameters": 22000000,
+              "system_requirements": {
+                "gpu_memory": "1GB+",
+                "ram": "4GB+",
+                "storage": "500MB",
+                "cuda": false,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.7+",
+                "dependencies": ["torch", "sentence-transformers", "transformers"]
+              },
+              "use_cases": ["embeddings", "similarity", "clustering", "semantic_search"],
+              "license": "apache-2.0",
+              "tags": ["embeddings", "sentence_transformers", "similarity", "clustering"],
+              "performance_metrics": {
+                "inference_speed": "very_fast",
+                "accuracy": "high",
+                "memory_efficiency": "very_high"
+              },
+              "supported_tasks": [
+                "feature-extraction",
+                "sentence-similarity",
+                "semantic-search",
+                "clustering"
+              ]
+            }
+          ]
+        },
+        "text_generation": {
+          "name": "Text Generation",
+          "count": 282414,
+          "description": "Models for generating human-like text",
+          "models": [
+            {
+              "id": "mistralai/Mistral-7B-Instruct-v0.2",
+              "name": "Mistral 7B Instruct",
+              "description": "Powerful instruction-following model for reasoning and coding tasks",
+              "size": "7B",
+              "parameters": 7000000000,
+              "system_requirements": {
+                "gpu_memory": "16GB+",
+                "ram": "32GB+",
+                "storage": "15GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "accelerate"]
+              },
+              "use_cases": ["instruction_following", "reasoning", "coding", "analysis", "problem_solving"],
+              "license": "apache-2.0",
+              "tags": ["instruction_following", "reasoning", "coding", "mistral"],
+              "performance_metrics": {
+                "inference_speed": "medium",
+                "accuracy": "very_high",
+                "memory_efficiency": "medium"
+              },
+              "supported_tasks": [
+                "text-generation",
+                "instruction-following",
+                "code-generation",
+                "reasoning",
+                "question-answering"
+              ]
+            },
+            {
+              "id": "HuggingFaceH4/zephyr-7b-beta",
+              "name": "Zephyr 7B Beta",
+              "description": "Great conversational AI model for natural dialogue",
+              "size": "7B",
+              "parameters": 7000000000,
+              "system_requirements": {
+                "gpu_memory": "16GB+",
+                "ram": "32GB+",
+                "storage": "15GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "accelerate"]
+              },
+              "use_cases": ["chat", "qa", "general_conversation", "assistant"],
+              "license": "mit",
+              "tags": ["conversational", "chat", "zephyr", "assistant"],
+              "performance_metrics": {
+                "inference_speed": "medium",
+                "accuracy": "high",
+                "memory_efficiency": "medium"
+              },
+              "supported_tasks": [
+                "text-generation",
+                "conversational-ai",
+                "question-answering",
+                "chat"
+              ]
+            },
+            {
+              "id": "google/flan-t5-large",
+              "name": "Flan T5 Large",
+              "description": "Google's instruction-tuned T5 model for educational content",
+              "size": "770M",
+              "parameters": 770000000,
+              "system_requirements": {
+                "gpu_memory": "4GB+",
+                "ram": "16GB+",
+                "storage": "3GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.7+",
+                "dependencies": ["torch", "transformers"]
+              },
+              "use_cases": ["education", "facts", "explanations", "instruction_following"],
+              "license": "apache-2.0",
+              "tags": ["instruction_tuned", "t5", "educational", "flan"],
+              "performance_metrics": {
+                "inference_speed": "fast",
+                "accuracy": "high",
+                "memory_efficiency": "high"
+              },
+              "supported_tasks": [
+                "text-generation",
+                "instruction-following",
+                "question-answering",
+                "summarization"
+              ]
+            }
+          ]
+        },
+        "text_classification": {
+          "name": "Text Classification",
+          "count": 101608,
+          "description": "Models for classifying text into categories",
+          "models": [
+            {
+              "id": "distilbert-base-uncased-finetuned-sst-2-english",
+              "name": "DistilBERT SST-2",
+              "description": "Sentiment analysis model fine-tuned on SST-2 dataset",
+              "size": "66M",
+              "parameters": 66000000,
+              "system_requirements": {
+                "gpu_memory": "1GB+",
+                "ram": "4GB+",
+                "storage": "500MB",
+                "cuda": false,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.7+",
+                "dependencies": ["torch", "transformers"]
+              },
+              "use_cases": ["sentiment_analysis", "classification", "emotion_detection"],
+              "license": "apache-2.0",
+              "tags": ["distilbert", "sentiment", "classification", "sst2"],
+              "performance_metrics": {
+                "inference_speed": "very_fast",
+                "accuracy": "high",
+                "memory_efficiency": "very_high"
+              },
+              "supported_tasks": [
+                "text-classification",
+                "sentiment-analysis",
+                "emotion-detection"
+              ]
+            }
+          ]
+        },
+        "question_answering": {
+          "name": "Question Answering",
+          "count": 13009,
+          "description": "Models for answering questions based on given context",
+          "models": []
+        },
+        "summarization": {
+          "name": "Summarization",
+          "count": 2482,
+          "description": "Models for summarizing long texts",
+          "models": []
+        },
+        "translation": {
+          "name": "Translation",
+          "count": 7641,
+          "description": "Models for translating text between languages",
+          "models": []
+        }
+      }
+    },
+    "computer_vision": {
+      "title": "Computer Vision",
+      "description": "Models for image and video processing tasks",
+      "icon": "👁️",
+      "model_count": 150000,
+      "subcategories": {
+        "image_classification": {
+          "name": "Image Classification",
+          "count": 19564,
+          "description": "Models for classifying images into categories",
+          "models": [
+            {
+              "id": "google/vit-base-patch16-224",
+              "name": "ViT Base",
+              "description": "Vision Transformer for image classification",
+              "size": "86M",
+              "parameters": 86000000,
+              "system_requirements": {
+                "gpu_memory": "4GB+",
+                "ram": "8GB+",
+                "storage": "1GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.7+",
+                "dependencies": ["torch", "transformers", "torchvision"]
+              },
+              "use_cases": ["image_classification", "object_recognition", "vision_transformer"],
+              "license": "apache-2.0",
+              "tags": ["vision_transformer", "vit", "image_classification"],
+              "performance_metrics": {
+                "inference_speed": "fast",
+                "accuracy": "high",
+                "memory_efficiency": "high"
+              },
+              "supported_tasks": [
+                "image-classification",
+                "object-recognition",
+                "feature-extraction"
+              ]
+            }
+          ]
+        },
+        "object_detection": {
+          "name": "Object Detection",
+          "count": 3750,
+          "description": "Models for detecting and localizing objects in images",
+          "models": [
+            {
+              "id": "facebook/detr-resnet-50",
+              "name": "DETR ResNet-50",
+              "description": "End-to-end object detection using transformers",
+              "size": "41M",
+              "parameters": 41000000,
+              "system_requirements": {
+                "gpu_memory": "6GB+",
+                "ram": "8GB+",
+                "storage": "1GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.7+",
+                "dependencies": ["torch", "transformers", "torchvision"]
+              },
+              "use_cases": ["object_detection", "instance_segmentation", "detection"],
+              "license": "apache-2.0",
+              "tags": ["detr", "object_detection", "transformer", "detection"],
+              "performance_metrics": {
+                "inference_speed": "medium",
+                "accuracy": "high",
+                "memory_efficiency": "medium"
+              },
+              "supported_tasks": [
+                "object-detection",
+                "instance-segmentation",
+                "panoptic-segmentation"
+              ]
+            }
+          ]
+        },
+        "text_to_image": {
+          "name": "Text-to-Image",
+          "count": 86483,
+          "description": "Models for generating images from text descriptions",
+          "models": [
+            {
+              "id": "runwayml/stable-diffusion-v1-5",
+              "name": "Stable Diffusion v1.5",
+              "description": "Text-to-image generation model for creating images from text",
+              "size": "860M",
+              "parameters": 860000000,
+              "system_requirements": {
+                "gpu_memory": "8GB+",
+                "ram": "16GB+",
+                "storage": "4GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "diffusers", "transformers", "accelerate"]
+              },
+              "use_cases": ["image_generation", "art_creation", "content_creation", "text_to_image"],
+              "license": "creativeml-openrail-m",
+              "tags": ["stable_diffusion", "text_to_image", "generation", "art"],
+              "performance_metrics": {
+                "inference_speed": "slow",
+                "accuracy": "high",
+                "memory_efficiency": "medium"
+              },
+              "supported_tasks": [
+                "text-to-image",
+                "image-generation",
+                "art-creation"
+              ]
+            }
+          ]
+        },
+        "image_to_text": {
+          "name": "Image-to-Text",
+          "count": 8644,
+          "description": "Models for generating text descriptions from images",
+          "models": [
+            {
+              "id": "Salesforce/blip-image-captioning-base",
+              "name": "BLIP Image Captioning",
+              "description": "Image captioning model for generating descriptions",
+              "size": "224M",
+              "parameters": 224000000,
+              "system_requirements": {
+                "gpu_memory": "4GB+",
+                "ram": "8GB+",
+                "storage": "1GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.7+",
+                "dependencies": ["torch", "transformers", "pillow"]
+              },
+              "use_cases": ["image_captioning", "description", "accessibility"],
+              "license": "bsd-3-clause",
+              "tags": ["blip", "image_captioning", "captioning"],
+              "performance_metrics": {
+                "inference_speed": "fast",
+                "accuracy": "high",
+                "memory_efficiency": "high"
+              },
+              "supported_tasks": [
+                "image-captioning",
+                "image-description",
+                "accessibility"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "audio": {
+      "title": "Audio",
+      "description": "Models for audio processing, speech recognition, and generation",
+      "icon": "🎵",
+      "model_count": 50000,
+      "subcategories": {
+        "automatic_speech_recognition": {
+          "name": "Automatic Speech Recognition",
+          "count": 26043,
+          "description": "Models for converting speech to text",
+          "models": [
+            {
+              "id": "openai/whisper-large-v3",
+              "name": "Whisper Large v3",
+              "description": "Large-scale automatic speech recognition with multilingual support",
+              "size": "1550M",
+              "parameters": 1550000000,
+              "system_requirements": {
+                "gpu_memory": "8GB+",
+                "ram": "16GB+",
+                "storage": "3GB",
+                "cuda": true,
+                "os": ["Linux", "Windows", "macOS"],
+                "python": "3.8+",
+                "dependencies": ["torch", "transformers", "librosa", "soundfile"]
+              },
+              "use_cases": ["speech_recognition", "transcription", "multilingual_asr", "audio_processing"],
+              "license": "mit",
+              "tags": ["whisper", "speech_recognition", "multilingual", "transcription"],
+              "performance_metrics": {
+                "inference_speed": "medium",
+                "accuracy": "very_high",
+                "memory_efficiency": "medium"
+              },
+              "supported_tasks": [
+                "automatic-speech-recognition",
+                "audio-transcription",
+                "speech-to-text",
+                "multilingual-asr"
+              ]
+            }
+          ]
+        },
+        "text_to_speech": {
+          "name": "Text-to-Speech",
+          "count": 3376,
+          "description": "Models for converting text to speech",
+          "models": []
+        },
+        "audio_classification": {
+          "name": "Audio Classification",
+          "count": 3518,
+          "description": "Models for classifying audio content",
+          "models": []
+        },
+        "audio_to_audio": {
+          "name": "Audio-to-Audio",
+          "count": 3966,
+          "description": "Models for processing audio to generate audio",
+          "models": []
+        }
+      }
+    },
+    "reinforcement_learning": {
+      "title": "Reinforcement Learning",
+      "description": "Models that learn optimal behaviors through interactions",
+      "icon": "🎮",
+      "model_count": 64703,
+      "subcategories": {
+        "reinforcement_learning": {
+          "name": "Reinforcement Learning",
+          "count": 64703,
+          "description": "Models for reinforcement learning tasks",
+          "models": []
+        }
+      }
+    }
+  },
+  "download_config": {
+    "base_directory": "output/downloaded_models",
+    "cache_directory": "output/cache",
+    "scripts_directory": "output/scripts",
+    "configs_directory": "output/configs",
+    "supported_formats": ["pytorch", "safetensors", "onnx"],
+    "compression": true,
+    "verify_downloads": true
+  },
+  "system_requirements_guide": {
+    "gpu_memory": {
+      "1GB+": "Basic models, CPU-friendly",
+      "2GB+": "Small models with GPU acceleration",
+      "4GB+": "Medium models, good performance",
+      "8GB+": "Large models, recommended",
+      "16GB+": "Very large models, high-end GPUs",
+      "24GB+": "Massive models, professional GPUs"
+    },
+    "ram": {
+      "4GB+": "Minimum for small models",
+      "8GB+": "Recommended for medium models",
+      "16GB+": "Good for large models",
+      "32GB+": "Required for very large models",
+      "64GB+": "Professional workstations"
+    },
+    "storage": {
+      "500MB": "Small models",
+      "1GB": "Medium models",
+      "2GB": "Large models",
+      "4GB": "Very large models",
+      "15GB+": "Massive models"
+    }
+  }
+}

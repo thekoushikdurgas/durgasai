@@ -1,0 +1,158 @@
+{
+    "name": "hunyuan_facial_portrait",
+    "description": "Generate high-resolution 2K facial portraits using HunyuanImage-2.1 with facial feature enhancement. Combines facial analysis with AI generation for personalized portraits.",
+    "function_name": "generate_hunyuan_facial_portrait",
+    "input_parameters": [
+        {
+            "name": "image_path",
+            "type": "string",
+            "description": "Path to the input facial image for analysis",
+            "required": true,
+            "example": "path/to/face_image.jpg"
+        },
+        {
+            "name": "style_preference",
+            "type": "string",
+            "description": "Artistic style for the generated portrait",
+            "required": false,
+            "default": "professional",
+            "enum": ["professional", "artistic", "casual", "fantasy", "vintage"]
+        },
+        {
+            "name": "aspect_ratio",
+            "type": "string",
+            "description": "Aspect ratio for the generated portrait",
+            "required": false,
+            "default": "1:1",
+            "enum": ["1:1", "16:9", "9:16", "4:3", "3:4", "3:2", "2:3"]
+        },
+        {
+            "name": "use_refiner",
+            "type": "boolean",
+            "description": "Enable refiner model for higher quality",
+            "required": false,
+            "default": true
+        },
+        {
+            "name": "use_prompt_enhancement",
+            "type": "boolean",
+            "description": "Automatically enhance prompts based on facial features",
+            "required": false,
+            "default": true
+        },
+        {
+            "name": "num_inference_steps",
+            "type": "integer",
+            "description": "Number of inference steps",
+            "required": false,
+            "default": 50,
+            "minimum": 8,
+            "maximum": 50
+        },
+        {
+            "name": "guidance_scale",
+            "type": "number",
+            "description": "Guidance scale for generation",
+            "required": false,
+            "default": 3.5,
+            "minimum": 1.0,
+            "maximum": 10.0
+        },
+        {
+            "name": "seed",
+            "type": "integer",
+            "description": "Random seed for reproducible generation",
+            "required": false
+        },
+        {
+            "name": "additional_prompt",
+            "type": "string",
+            "description": "Additional text to add to the facial feature-based prompt",
+            "required": false,
+            "example": "in a garden setting, soft lighting"
+        },
+        {
+            "name": "use_local",
+            "type": "boolean",
+            "description": "Use local model instead of API",
+            "required": false,
+            "default": false
+        }
+    ],
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean",
+                "description": "Whether the portrait generation was successful"
+            },
+            "image_path": {
+                "type": "string",
+                "description": "Path to the generated portrait image"
+            },
+            "facial_analysis": {
+                "type": "object",
+                "description": "Facial features extracted from the input image",
+                "properties": {
+                    "face_shape": {"type": "object"},
+                    "eye_features": {"type": "object"},
+                    "nose_features": {"type": "object"},
+                    "mouth_features": {"type": "object"}
+                }
+            },
+            "generation_info": {
+                "type": "object",
+                "description": "Information about the generation process",
+                "properties": {
+                    "prompt": {"type": "string"},
+                    "enhanced_prompt": {"type": "string"},
+                    "aspect_ratio": {"type": "string"},
+                    "width": {"type": "integer"},
+                    "height": {"type": "integer"},
+                    "style_preference": {"type": "string"},
+                    "generation_time": {"type": "number"},
+                    "method": {"type": "string"}
+                }
+            },
+            "error": {
+                "type": "string",
+                "description": "Error message if generation failed"
+            }
+        }
+    },
+    "code": "hunyuan_facial_portrait.py",
+    "category": "AI Generation",
+    "tags": ["image", "generation", "ai", "hunyuan", "portrait", "facial", "2k", "high-resolution"],
+    "author": "DurgasAI",
+    "version": "1.0.0",
+    "requirements": ["torch", "PIL", "huggingface_hub", "opencv-python"],
+    "usage_examples": [
+        {
+            "description": "Generate a professional portrait",
+            "parameters": {
+                "image_path": "path/to/face.jpg",
+                "style_preference": "professional",
+                "aspect_ratio": "1:1"
+            }
+        },
+        {
+            "description": "Generate artistic portrait with enhancement",
+            "parameters": {
+                "image_path": "path/to/face.jpg",
+                "style_preference": "artistic",
+                "use_prompt_enhancement": true,
+                "use_refiner": true,
+                "additional_prompt": "in a magical forest setting"
+            }
+        },
+        {
+            "description": "Generate high-resolution portrait for specific aspect ratio",
+            "parameters": {
+                "image_path": "path/to/face.jpg",
+                "aspect_ratio": "3:4",
+                "num_inference_steps": 50,
+                "guidance_scale": 4.0
+            }
+        }
+    ]
+}

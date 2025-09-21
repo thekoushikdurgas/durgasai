@@ -1,0 +1,77 @@
+{
+  "id": "task_list_manager_001",
+  "name": "task_list_manager",
+  "description": "Manage a list of tasks with completion status",
+  "version": "1.0.0",
+  "author": "DurgasAI",
+  "category": "utility",
+  "status": "enabled",
+  "security_level": "low",
+  "function_name": "task_list_manager",
+  "return_type": "string",
+  "input_parameters": [
+    {
+      "name": "task_names",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of task names",
+      "required": true
+    },
+    {
+      "name": "completion_status",
+      "type": "array",
+      "item_type": "boolean",
+      "description": "List of completion status for each task (true/false)",
+      "required": true
+    },
+    {
+      "name": "show_summary",
+      "type": "boolean",
+      "description": "Show task completion summary",
+      "required": false
+    }
+  ],
+  "output_parameters": [
+    {
+      "name": "task_report",
+      "type": "string",
+      "description": "Formatted task status report",
+      "format": "plain_text"
+    },
+    {
+      "name": "completion_summary",
+      "type": "object",
+      "description": "Summary statistics of task completion",
+      "format": "json"
+    },
+    {
+      "name": "completed_tasks",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of completed task names",
+      "format": "plain_text"
+    },
+    {
+      "name": "pending_tasks",
+      "type": "array",
+      "item_type": "string",
+      "description": "List of pending task names",
+      "format": "plain_text"
+    }
+  ],
+  "code": "task_list_manager.py",
+  "dependencies": [],
+  "tags": [
+    "task",
+    "management",
+    "productivity",
+    "utility"
+  ],
+  "created_at": "2025-09-12T04:06:33.887881",
+  "updated_at": "2025-09-12T04:06:33.887890",
+  "last_executed": null,
+  "execution_count": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "average_execution_time": 0.0
+}

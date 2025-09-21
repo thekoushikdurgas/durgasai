@@ -1,0 +1,51 @@
+{
+  "application": {
+    "title": "DurgasAI",
+    "icon": "🤖",
+    "layout": "wide",
+    "version": "2.0.0",
+    "description": "Advanced AI Agent Platform with HuggingFace and LangChain",
+    "author": "DurgasAI Team",
+    "homepage": "https://github.com/durgasai/durgasai"
+  },
+  "ui": {
+    "theme": "auto",
+    "sidebar_width": 300,
+    "chat_height": 600,
+    "enable_animations": true,
+    "enable_sound_effects": false,
+    "enable_keyboard_shortcuts": true,
+    "default_page": "chat",
+    "enable_debug_mode": false,
+    "max_cached_pages": 10
+  },
+  "chat": {
+    "max_message_history": 50,
+    "enable_export": true,
+    "enable_import": true,
+    "auto_save_interval": 30,
+    "enable_typing_indicator": true,
+    "enable_message_timestamps": true,
+    "enable_message_metadata": true,
+    "conversation_examples_enabled": true
+  },
+  "performance": {
+    "enable_performance_monitoring": true,
+    "log_slow_operations": true,
+    "slow_operation_threshold": 2.0,
+    "enable_memory_monitoring": true,
+    "memory_check_interval": 30
+  },
+  "logging": {
+    "log_level": "INFO",
+    "enable_debug_logging": false,
+    "enable_performance_logging": true,
+    "log_retention_days": 30,
+    "max_log_file_size": "10MB",
+    "log_folder_path": "./output/logs",
+    "enable_file_logging": true,
+    "enable_console_logging": true,
+    "log_format": "%(asctime)s | %(name)s | %(levelname)s | %(funcName)s:%(lineno)d | %(message)s",
+    "date_format": "%Y-%m-%d %H:%M:%S,%f"
+  }
+}

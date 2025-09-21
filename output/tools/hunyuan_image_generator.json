@@ -1,0 +1,171 @@
+{
+    "name": "hunyuan_image_generator",
+    "description": "Generate ultra-high-definition 2K (2048x2048) images using Tencent's HunyuanImage-2.1 model. Supports multiple aspect ratios, multilingual prompts, prompt enhancement, and refiner model for exceptional quality.",
+    "function_name": "generate_hunyuan_image",
+    "input_parameters": [
+        {
+            "name": "prompt",
+            "type": "string",
+            "description": "Text description of the image to generate. Supports both English and Chinese prompts.",
+            "required": true,
+            "example": "A beautiful landscape with mountains and a serene lake at sunset"
+        },
+        {
+            "name": "aspect_ratio",
+            "type": "string",
+            "description": "Aspect ratio for the generated image",
+            "required": false,
+            "default": "1:1",
+            "enum": ["1:1", "16:9", "9:16", "4:3", "3:4", "3:2", "2:3"]
+        },
+        {
+            "name": "use_refiner",
+            "type": "boolean",
+            "description": "Enable refiner model for higher quality (slower generation)",
+            "required": false,
+            "default": true
+        },
+        {
+            "name": "use_prompt_enhancement",
+            "type": "boolean",
+            "description": "Automatically enhance prompts for better results",
+            "required": false,
+            "default": false
+        },
+        {
+            "name": "num_inference_steps",
+            "type": "integer",
+            "description": "Number of inference steps (8 for distilled model, 50 for full model)",
+            "required": false,
+            "default": 50,
+            "minimum": 8,
+            "maximum": 50
+        },
+        {
+            "name": "guidance_scale",
+            "type": "number",
+            "description": "Guidance scale for generation (higher = more prompt adherence)",
+            "required": false,
+            "default": 3.5,
+            "minimum": 1.0,
+            "maximum": 10.0
+        },
+        {
+            "name": "seed",
+            "type": "integer",
+            "description": "Random seed for reproducible generation (null for random)",
+            "required": false
+        },
+        {
+            "name": "use_local",
+            "type": "boolean",
+            "description": "Use local model instead of API (requires 24GB+ GPU memory)",
+            "required": false,
+            "default": false
+        },
+        {
+            "name": "facial_features",
+            "type": "object",
+            "description": "Facial features data to enhance the prompt (optional)",
+            "required": false,
+            "properties": {
+                "face_shape": {"type": "object"},
+                "eye_features": {"type": "object"},
+                "nose_features": {"type": "object"},
+                "mouth_features": {"type": "object"}
+            }
+        },
+        {
+            "name": "style_preference",
+            "type": "string",
+            "description": "Artistic style for the generated image",
+            "required": false,
+            "default": "professional",
+            "enum": ["professional", "artistic", "casual", "fantasy", "vintage"]
+        }
+    ],
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean",
+                "description": "Whether the image generation was successful"
+            },
+            "image_path": {
+                "type": "string",
+                "description": "Path to the generated image file"
+            },
+            "image_data": {
+                "type": "string",
+                "description": "Base64 encoded image data (if requested)"
+            },
+            "generation_info": {
+                "type": "object",
+                "description": "Information about the generation process",
+                "properties": {
+                    "prompt": {"type": "string"},
+                    "enhanced_prompt": {"type": "string"},
+                    "aspect_ratio": {"type": "string"},
+                    "width": {"type": "integer"},
+                    "height": {"type": "integer"},
+                    "use_refiner": {"type": "boolean"},
+                    "use_prompt_enhancement": {"type": "boolean"},
+                    "num_inference_steps": {"type": "integer"},
+                    "guidance_scale": {"type": "number"},
+                    "seed": {"type": "integer"},
+                    "method": {"type": "string"},
+                    "generation_time": {"type": "number"},
+                    "style_preference": {"type": "string"}
+                }
+            },
+            "error": {
+                "type": "string",
+                "description": "Error message if generation failed"
+            }
+        }
+    },
+    "code": "hunyuan_image_generator.py",
+    "category": "AI Generation",
+    "tags": ["image", "generation", "ai", "hunyuan", "2k", "high-resolution", "tencent", "chinese", "multilingual"],
+    "author": "DurgasAI",
+    "version": "1.0.0",
+    "requirements": ["torch", "PIL", "huggingface_hub"],
+    "usage_examples": [
+        {
+            "description": "Generate a basic 2K image",
+            "parameters": {
+                "prompt": "A majestic eagle soaring over mountain peaks at sunset",
+                "aspect_ratio": "16:9"
+            }
+        },
+        {
+            "description": "Generate with prompt enhancement and refiner",
+            "parameters": {
+                "prompt": "A futuristic city skyline",
+                "use_prompt_enhancement": true,
+                "use_refiner": true,
+                "aspect_ratio": "1:1"
+            }
+        },
+        {
+            "description": "Generate portrait with facial features",
+            "parameters": {
+                "prompt": "A professional portrait",
+                "facial_features": {
+                    "face_shape": {"face_shape": "oval"},
+                    "eye_features": {"eye_shape": "almond"}
+                },
+                "style_preference": "professional",
+                "aspect_ratio": "3:4"
+            }
+        },
+        {
+            "description": "Generate with Chinese prompt",
+            "parameters": {
+                "prompt": "一只可爱的熊猫在竹林中吃竹子",
+                "aspect_ratio": "1:1",
+                "use_refiner": true
+            }
+        }
+    ]
+}

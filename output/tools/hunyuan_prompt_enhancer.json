@@ -1,0 +1,169 @@
+{
+    "name": "hunyuan_prompt_enhancer",
+    "description": "Enhance and optimize prompts for HunyuanImage-2.1 generation. Provides prompt improvement suggestions, style optimization, and multilingual prompt support.",
+    "function_name": "enhance_hunyuan_prompt",
+    "input_parameters": [
+        {
+            "name": "prompt",
+            "type": "string",
+            "description": "Original prompt to enhance",
+            "required": true,
+            "example": "A person in a garden"
+        },
+        {
+            "name": "enhancement_type",
+            "type": "string",
+            "description": "Type of enhancement to apply",
+            "required": false,
+            "default": "comprehensive",
+            "enum": ["comprehensive", "style", "detail", "quality", "multilingual", "custom"]
+        },
+        {
+            "name": "style_preference",
+            "type": "string",
+            "description": "Artistic style preference",
+            "required": false,
+            "default": "balanced",
+            "enum": ["professional", "artistic", "casual", "fantasy", "vintage", "photorealistic", "balanced"]
+        },
+        {
+            "name": "target_language",
+            "type": "string",
+            "description": "Target language for multilingual enhancement",
+            "required": false,
+            "default": "english",
+            "enum": ["english", "chinese", "both"]
+        },
+        {
+            "name": "quality_level",
+            "type": "string",
+            "description": "Quality level for enhancement",
+            "required": false,
+            "default": "high",
+            "enum": ["basic", "medium", "high", "premium"]
+        },
+        {
+            "name": "add_technical_tags",
+            "type": "boolean",
+            "description": "Add technical quality tags",
+            "required": false,
+            "default": true
+        },
+        {
+            "name": "add_lighting_descriptions",
+            "type": "boolean",
+            "description": "Add lighting and atmosphere descriptions",
+            "required": false,
+            "default": true
+        },
+        {
+            "name": "max_length",
+            "type": "integer",
+            "description": "Maximum length for enhanced prompt",
+            "required": false,
+            "default": 200,
+            "minimum": 50,
+            "maximum": 500
+        }
+    ],
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean",
+                "description": "Whether the prompt enhancement was successful"
+            },
+            "enhanced_prompt": {
+                "type": "string",
+                "description": "Enhanced version of the original prompt"
+            },
+            "original_prompt": {
+                "type": "string",
+                "description": "Original prompt that was enhanced"
+            },
+            "enhancement_details": {
+                "type": "object",
+                "description": "Details about the enhancement process",
+                "properties": {
+                    "enhancement_type": {"type": "string"},
+                    "style_preference": {"type": "string"},
+                    "quality_level": {"type": "string"},
+                    "additions": {"type": "array", "items": {"type": "string"}},
+                    "improvements": {"type": "array", "items": {"type": "string"}},
+                    "length_increase": {"type": "integer"},
+                    "confidence_score": {"type": "number"}
+                }
+            },
+            "alternative_prompts": {
+                "type": "array",
+                "description": "Alternative enhanced versions",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "variant": {"type": "string"},
+                        "prompt": {"type": "string"},
+                        "focus": {"type": "string"}
+                    }
+                }
+            },
+            "recommendations": {
+                "type": "object",
+                "description": "Recommendations for optimal generation",
+                "properties": {
+                    "suggested_aspect_ratio": {"type": "string"},
+                    "suggested_inference_steps": {"type": "integer"},
+                    "suggested_guidance_scale": {"type": "number"},
+                    "use_refiner": {"type": "boolean"},
+                    "use_prompt_enhancement": {"type": "boolean"}
+                }
+            },
+            "error": {
+                "type": "string",
+                "description": "Error message if enhancement failed"
+            }
+        }
+    },
+    "code": "hunyuan_prompt_enhancer.py",
+    "category": "AI Enhancement",
+    "tags": ["prompt", "enhancement", "optimization", "hunyuan", "text", "ai", "generation"],
+    "author": "DurgasAI",
+    "version": "1.0.0",
+    "requirements": ["re", "random"],
+    "usage_examples": [
+        {
+            "description": "Enhance a basic prompt comprehensively",
+            "parameters": {
+                "prompt": "A cat sitting",
+                "enhancement_type": "comprehensive",
+                "style_preference": "photorealistic"
+            }
+        },
+        {
+            "description": "Enhance for artistic style",
+            "parameters": {
+                "prompt": "A mountain landscape",
+                "enhancement_type": "style",
+                "style_preference": "artistic",
+                "add_lighting_descriptions": true
+            }
+        },
+        {
+            "description": "Create multilingual prompt",
+            "parameters": {
+                "prompt": "A beautiful flower garden",
+                "enhancement_type": "multilingual",
+                "target_language": "both"
+            }
+        },
+        {
+            "description": "High-quality enhancement with technical tags",
+            "parameters": {
+                "prompt": "A portrait of a person",
+                "enhancement_type": "comprehensive",
+                "quality_level": "premium",
+                "add_technical_tags": true,
+                "max_length": 300
+            }
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "name": "vision_analyzer",
+    "description": "Analyze images using Hugging Face vision models with detailed descriptions, visual question answering, and image captioning capabilities.",
+    "function_name": "analyze_image_with_vision_model",
+    "input_parameters": [
+        {
+            "name": "image_path",
+            "type": "string",
+            "description": "Path to the image file to analyze",
+            "required": true,
+            "example": "/path/to/image.jpg"
+        },
+        {
+            "name": "analysis_prompt",
+            "type": "string",
+            "description": "Text prompt describing what to analyze in the image",
+            "required": false,
+            "default": "Describe this image in detail",
+            "example": "What objects can you see in this image and what are they doing?"
+        },
+        {
+            "name": "model_name",
+            "type": "string",
+            "description": "HuggingFace model ID to use for analysis",
+            "required": false,
+            "default": "HuggingFaceM4/idefics2-8b",
+            "enum": [
+                "HuggingFaceM4/idefics2-8b",
+                "HuggingFaceM4/idefics2-8b-chatty",
+                "zai-org/GLM-4.5V",
+                "meta-llama/Llama-3.2-11B-Vision-Instruct",
+                "llava-hf/llava-interleave-qwen-0.5b-hf"
+            ]
+        },
+        {
+            "name": "api_token",
+            "type": "string",
+            "description": "HuggingFace API token (optional, will use config if not provided)",
+            "required": false,
+            "example": "hf_your_token_here"
+        }
+    ],
+    "output_schema": {
+        "success": "boolean",
+        "analysis": "string",
+        "model_used": "string",
+        "processing_time": "number",
+        "image_processed": "boolean",
+        "metadata": "object"
+    },
+    "examples": [
+        {
+            "description": "Analyze a photo of a city street",
+            "input": {
+                "image_path": "/path/to/city_street.jpg",
+                "analysis_prompt": "Describe the scene, identify objects, and analyze the mood"
+            }
+        },
+        {
+            "description": "Analyze a medical image",
+            "input": {
+                "image_path": "/path/to/xray.jpg",
+                "analysis_prompt": "Describe what you see in this medical image",
+                "model_name": "zai-org/GLM-4.5V"
+            }
+        }
+    ],
+    "category": "vision",
+    "tags": ["image", "analysis", "computer-vision", "huggingface", "multimodal"],
+    "requirements": ["huggingface_hub", "PIL", "requests"],
+    "version": "1.0.0"
+}

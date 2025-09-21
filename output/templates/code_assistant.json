@@ -1,0 +1,90 @@
+{
+  "name": "Code Assistant",
+  "description": "A programming assistant for coding, debugging, and software development.",
+  "icon": "💻",
+  "category": "programming",
+  "tags": [
+    "coding",
+    "programming",
+    "development",
+    "debugging"
+  ],
+  "function_calling_enabled": true,
+  "function_calling_tools": [
+    "calculate_math",
+    "file_operations",
+    "search_web"
+  ],
+  "model_selection": {
+    "primary_model": "mistral:latest",
+    "capabilities": [
+      "fast_responses",
+      "balanced_performance",
+      "multimodal",
+      "thinking_mode"
+    ],
+    "pricing": {
+      "input": 0.3,
+      "output": 2.5
+    }
+  },
+  "generation_parameters": {
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_output_tokens": 4096,
+    "thinking_budget": 1500
+  },
+  "system_instruction": "You are a programming assistant. Provide clean, well-commented code with explanations and best practices. Focus on:\n\n• Writing clean, readable, and efficient code\n• Following best practices and design patterns\n• Providing comprehensive code comments\n• Explaining complex algorithms and logic\n• Debugging and troubleshooting assistance\n• Security considerations in code\n• Performance optimization\n• Testing strategies\n\nAlways explain your code solutions step-by-step and suggest improvements. Consider maintainability, scalability, and readability in all recommendations.",
+  "safety_settings": {
+    "hate_speech": "BLOCK_MEDIUM_AND_ABOVE",
+    "dangerous_content": "BLOCK_ONLY_HIGH",
+    "harassment": "BLOCK_MEDIUM_AND_ABOVE",
+    "sexually_explicit": "BLOCK_MEDIUM_AND_ABOVE"
+  },
+  "workflow_templates": {
+    "basic_chat": {
+      "name": "Basic Chat",
+      "description": "Simple conversational AI without complex workflows",
+      "workflow_type": "basic_chat",
+      "features": ["conversation", "basic_tools"]
+    },
+    "advanced_tools": {
+      "name": "Advanced Tools",
+      "description": "AI with sophisticated tool usage and planning",
+      "workflow_type": "advanced_tools",
+      "features": ["conversation", "tool_planning", "multi_step_reasoning"]
+    },
+    "research_assistant": {
+      "name": "Research Assistant",
+      "description": "AI specialized in research and web search",
+      "workflow_type": "research_assistant",
+      "features": ["web_search", "information_synthesis", "source_citation"]
+    },
+    "code_assistant": {
+      "name": "Code Assistant",
+      "description": "AI specialized in programming and development",
+      "workflow_type": "code_assistant",
+      "features": [
+        "code_generation",
+        "debugging",
+        "file_operations",
+        "calculations"
+      ]
+    },
+    "conditional_workflow": {
+      "name": "Conditional Workflow",
+      "description": "Intelligent AI that routes requests based on content analysis",
+      "workflow_type": "conditional_workflow",
+      "features": [
+        "conversation",
+        "content_analysis",
+        "conditional_routing",
+        "specialized_processing"
+      ]
+    }
+  },
+  "created_at": "2025-09-14T01:24:31.406029",
+  "updated_at": "2025-09-14T01:24:31.406041",
+  "version": "1.0"
+}

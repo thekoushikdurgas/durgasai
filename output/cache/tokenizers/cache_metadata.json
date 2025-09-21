@@ -1,0 +1,12 @@
+{
+  "performance_stats": {
+    "total_loads": 1,
+    "cache_hits": 0,
+    "cache_misses": 1,
+    "average_load_time": 9.572230339050293,
+    "total_tokenizations": 0,
+    "batch_tokenizations": 0,
+    "error_count": 0
+  },
+  "last_updated": 1758467539.1699145
+}

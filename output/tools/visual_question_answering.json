@@ -1,0 +1,78 @@
+{
+    "name": "visual_question_answering",
+    "description": "Answer questions about images using visual question answering models from Hugging Face.",
+    "function_name": "answer_visual_question",
+    "input_parameters": [
+        {
+            "name": "image_path",
+            "type": "string",
+            "description": "Path to the image file to analyze",
+            "required": true,
+            "example": "/path/to/image.jpg"
+        },
+        {
+            "name": "question",
+            "type": "string",
+            "description": "Question to ask about the image",
+            "required": true,
+            "example": "What color is the car in the image?"
+        },
+        {
+            "name": "model_name",
+            "type": "string",
+            "description": "HuggingFace model ID for visual question answering",
+            "required": false,
+            "default": "Salesforce/blip-vqa-base",
+            "enum": [
+                "Salesforce/blip-vqa-base",
+                "Salesforce/blip-vqa-capfilt-large",
+                "Salesforce/blip2-flan-t5-xl",
+                "Salesforce/blip2-opt-2.7b"
+            ]
+        },
+        {
+            "name": "api_token",
+            "type": "string",
+            "description": "HuggingFace API token (optional, will use config if not provided)",
+            "required": false,
+            "example": "hf_your_token_here"
+        }
+    ],
+    "output_schema": {
+        "success": "boolean",
+        "answer": "string",
+        "question": "string",
+        "model_used": "string",
+        "processing_time": "number",
+        "image_processed": "boolean",
+        "metadata": "object"
+    },
+    "examples": [
+        {
+            "description": "Ask about objects in an image",
+            "input": {
+                "image_path": "/path/to/kitchen.jpg",
+                "question": "What appliances can you see in this kitchen?"
+            }
+        },
+        {
+            "description": "Ask about colors and details",
+            "input": {
+                "image_path": "/path/to/garden.jpg",
+                "question": "What types of flowers are visible and what colors are they?"
+            }
+        },
+        {
+            "description": "Ask about activities or actions",
+            "input": {
+                "image_path": "/path/to/sports.jpg",
+                "question": "What sport is being played in this image?",
+                "model_name": "Salesforce/blip-vqa-capfilt-large"
+            }
+        }
+    ],
+    "category": "vision",
+    "tags": ["image", "question", "answering", "visual", "huggingface", "vqa"],
+    "requirements": ["huggingface_hub", "PIL", "requests"],
+    "version": "1.0.0"
+}

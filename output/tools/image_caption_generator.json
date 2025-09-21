@@ -1,0 +1,61 @@
+{
+    "name": "image_caption_generator",
+    "description": "Generate descriptive captions for images using specialized Hugging Face captioning models.",
+    "function_name": "generate_image_caption",
+    "input_parameters": [
+        {
+            "name": "image_path",
+            "type": "string",
+            "description": "Path to the image file to caption",
+            "required": true,
+            "example": "/path/to/image.jpg"
+        },
+        {
+            "name": "model_name",
+            "type": "string",
+            "description": "HuggingFace model ID for captioning",
+            "required": false,
+            "default": "Salesforce/blip-image-captioning-base",
+            "enum": [
+                "Salesforce/blip-image-captioning-base",
+                "Salesforce/blip-image-captioning-large",
+                "microsoft/git-base-coco",
+                "microsoft/git-large-coco"
+            ]
+        },
+        {
+            "name": "api_token",
+            "type": "string",
+            "description": "HuggingFace API token (optional, will use config if not provided)",
+            "required": false,
+            "example": "hf_your_token_here"
+        }
+    ],
+    "output_schema": {
+        "success": "boolean",
+        "caption": "string",
+        "model_used": "string",
+        "processing_time": "number",
+        "image_processed": "boolean",
+        "metadata": "object"
+    },
+    "examples": [
+        {
+            "description": "Generate caption for a landscape photo",
+            "input": {
+                "image_path": "/path/to/mountain_landscape.jpg"
+            }
+        },
+        {
+            "description": "Generate caption for a person in a room",
+            "input": {
+                "image_path": "/path/to/person_room.jpg",
+                "model_name": "Salesforce/blip-image-captioning-large"
+            }
+        }
+    ],
+    "category": "vision",
+    "tags": ["image", "caption", "description", "huggingface", "blip"],
+    "requirements": ["huggingface_hub", "PIL", "requests"],
+    "version": "1.0.0"
+}

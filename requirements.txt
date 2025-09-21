@@ -1,0 +1,383 @@
+# DurgasAI - Comprehensive AI Agent Application Requirements
+# Unified requirements file combining all dependencies for full functionality
+# This includes: Core, Transformers, and all optional features
+
+# ========================================
+# CORE FRAMEWORK DEPENDENCIES (REQUIRED)
+# ========================================
+
+# Core Streamlit web framework
+streamlit>=1.28.0
+
+# LangChain ecosystem for AI agents
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.38
+langchain-huggingface>=0.0.3
+langsmith>=0.1.57
+
+# ========================================
+# HUGGINGFACE TRANSFORMERS ECOSYSTEM (REQUIRED)
+# ========================================
+
+# Core Transformers and HuggingFace integration
+transformers>=4.45.0
+huggingface-hub>=0.20.0
+tokenizers>=0.19.0
+datasets>=2.16.0
+evaluate>=0.4.0
+
+# Model acceleration and optimization
+accelerate>=0.25.0
+safetensors>=0.4.0
+sentencepiece>=0.1.99
+
+# Computer vision models and utilities
+timm>=0.9.0
+
+# ========================================
+# DEEP LEARNING FRAMEWORKS (REQUIRED)
+# ========================================
+
+# PyTorch ecosystem (CPU version - GPU versions commented below)
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# GPU versions (uncomment if you have CUDA-compatible GPU)
+# torch>=2.0.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+# torchvision>=0.15.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+# torchaudio>=2.0.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+
+# ========================================
+# BASIC IMAGE PROCESSING (REQUIRED)
+# ========================================
+
+# Core image processing
+Pillow>=10.0.0
+numpy>=1.24.0
+
+# ========================================
+# HTTP & API DEPENDENCIES (REQUIRED)
+# ========================================
+
+# HTTP requests and API handling
+requests>=2.28.0
+urllib3>=2.0.0
+certifi>=2023.7.22
+
+# ========================================
+# DATA PROCESSING & UTILITIES (REQUIRED)
+# ========================================
+
+# Core data handling
+pandas>=2.0.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+
+# JSON and data serialization
+orjson>=3.9.0
+
+# Date and time handling
+python-dateutil>=2.8.0
+
+# Text processing
+regex>=2023.6.0
+
+# System monitoring and debugging
+psutil>=5.9.0
+
+# Progress bars and UI enhancements
+tqdm>=4.65.0
+
+# Configuration management
+click>=8.1.0
+
+# ========================================
+# OPTIONAL: ADVANCED COMPUTER VISION & FACIAL AI
+# ========================================
+# Uncomment the following section for Facial AI Studio features
+
+# Advanced image processing
+# opencv-python>=4.8.0
+# scikit-image>=0.21.0
+# imageio>=2.31.0
+
+# Facial AI and computer vision (check Python version compatibility)
+# mediapipe>=0.10.7
+# diffusers>=0.21.0
+
+# Image enhancement (advanced features)
+# controlnet-aux>=0.0.7
+
+# ========================================
+# OPTIONAL: WEB SERVER & API FEATURES
+# ========================================
+# Uncomment for web server inference capabilities
+
+# Web server dependencies
+# httpx>=0.24.0
+# aiohttp>=3.8.0
+# starlette>=0.27.0
+# uvicorn>=0.23.0
+# fastapi>=0.104.0
+# python-multipart>=0.0.6
+
+# ========================================
+# OPTIONAL: ADVANCED ML FEATURES
+# ========================================
+# Uncomment for additional ML capabilities
+
+# Model optimization
+# optimum>=1.14.0
+# bitsandbytes>=0.41.0
+
+# Additional data formats
+# jsonschema>=4.17.0
+# jsonpatch>=1.33
+# pytz>=2023.3
+
+# Text processing libraries
+# nltk>=3.8.0
+# spacy>=3.6.0
+# markdown>=3.4.0
+# protobuf>=3.20.0
+
+# Async and concurrency
+# asyncio-throttle>=1.0.0
+# aiofiles>=23.0.0
+
+# Enhanced logging
+# loguru>=0.7.0
+# structlog>=23.1.0
+
+# CLI utilities
+# typer>=0.9.0
+
+# ========================================
+# OPTIONAL: AUDIO PROCESSING
+# ========================================
+# Uncomment for audio processing features
+
+# Audio processing libraries
+# soundfile>=0.12.0
+# librosa>=0.10.0
+
+# ========================================
+# OPTIONAL: JUPYTER & NOTEBOOK SUPPORT
+# ========================================
+# Uncomment for Jupyter notebook integration
+
+# Jupyter ecosystem
+# jupyter>=1.0.0
+# ipywidgets>=8.0.0
+
+# ========================================
+# OPTIONAL: DEVELOPMENT & TESTING
+# ========================================
+# Uncomment for development environment
+
+# Testing framework
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# pytest-asyncio>=0.21.0
+# pytest-mock>=3.11.0
+
+# Code formatting and linting
+# black>=23.7.0
+# isort>=5.12.0
+# flake8>=6.0.0
+# mypy>=1.5.0
+
+# ========================================
+# OPTIONAL: VISUALIZATION & ANALYTICS
+# ========================================
+# Uncomment for advanced visualization
+
+# Scientific computing and visualization
+# scikit-learn>=1.3.0
+# matplotlib>=3.7.0
+# plotly>=5.15.0
+# seaborn>=0.12.0
+
+# ========================================
+# OPTIONAL: DATABASE & STORAGE
+# ========================================
+# Uncomment for database integration
+
+# Database support
+# sqlalchemy>=2.0.0
+
+# Caching solutions
+# redis>=4.6.0
+# diskcache>=5.6.0
+
+# ========================================
+# OPTIONAL: WEB SCRAPING & CONTENT
+# ========================================
+# Uncomment for web scraping capabilities
+
+# Web scraping and content processing
+# beautifulsoup4>=4.12.0
+# lxml>=4.9.0
+# html5lib>=1.1
+
+# ========================================
+# OPTIONAL: EXPORT & FILE FORMATS
+# ========================================
+# Uncomment for additional export formats
+
+# Export formats
+# openpyxl>=3.1.0
+# xlsxwriter>=3.1.0
+
+# ========================================
+# OPTIONAL: SECURITY & AUTHENTICATION
+# ========================================
+# Uncomment for enhanced security features
+
+# Security and authentication
+# cryptography>=41.0.0
+# passlib>=1.7.0
+# python-jose>=3.3.0
+
+# ========================================
+# OPTIONAL: CLOUD & MONITORING SERVICES
+# ========================================
+# Uncomment for cloud integration
+
+# Cloud dependencies
+# boto3>=1.28.0          # AWS SDK
+# google-cloud>=0.34.0   # Google Cloud SDK  
+# azure-sdk>=1.0.0       # Azure SDK
+
+# Monitoring and logging services
+# sentry-sdk>=1.30.0     # Error tracking
+# wandb>=0.15.0          # Experiment tracking
+# mlflow>=2.5.0          # ML lifecycle management
+# prometheus-client>=0.17.0  # Metrics collection
+
+# ========================================
+# PLATFORM-SPECIFIC DEPENDENCIES (OPTIONAL)
+# ========================================
+
+# Windows
+# pywin32>=306; sys_platform == "win32"
+
+# macOS
+# pyobjc>=9.2; sys_platform == "darwin"
+
+# Linux development tools
+# python3-dev; sys_platform == "linux"
+
+# ========================================
+# INSTALLATION INSTRUCTIONS
+# ========================================
+
+# Quick Start Installation:
+# 1. Basic Installation (core features only):
+#    pip install streamlit langchain transformers torch requests numpy pandas pillow
+#
+# 2. Full Core Installation:
+#    pip install -r requirements.txt
+#
+# 3. Enable Facial AI Features:
+#    Uncomment the "ADVANCED COMPUTER VISION & FACIAL AI" section above
+#    Note: Check Python version compatibility for mediapipe
+#
+# 4. Enable Web Server Features:
+#    Uncomment the "WEB SERVER & API FEATURES" section above
+#
+# 5. GPU Support:
+#    Uncomment GPU versions of PyTorch packages and install CUDA toolkit
+#
+# 6. Development Environment:
+#    Uncomment the "DEVELOPMENT & TESTING" section above
+
+# ========================================
+# SYSTEM REQUIREMENTS
+# ========================================
+
+# Minimum System Requirements:
+# - Python 3.9+ (recommended 3.10+)
+# - 8GB+ RAM (16GB+ recommended for larger models)
+# - 4GB+ free disk space for model cache
+# - Internet connection for model downloads and API access
+
+# Recommended System Requirements:
+# - Python 3.10+ (avoid 3.12 if using mediapipe)
+# - 16GB+ RAM (32GB+ for large models)
+# - NVIDIA GPU with 8GB+ VRAM (optional, for GPU acceleration)
+# - 10GB+ free disk space
+# - Stable internet connection
+
+# GPU Requirements (for optimal performance):
+# - NVIDIA GPU with CUDA 11.8+ or 12.x
+# - 8GB+ VRAM for most models
+# - 16GB+ VRAM for large models (7B+ parameters)
+# - 24GB+ VRAM for very large models (13B+ parameters)
+
+# ========================================
+# FEATURE MATRIX
+# ========================================
+
+# Core Features (always available with base installation):
+# ✅ AI Agent Chat Interface
+# ✅ HuggingFace Model Integration
+# ✅ Text Processing (Tokenizers, Padding, Truncation)
+# ✅ Basic Image Processing
+# ✅ Analytics and Debugging
+# ✅ Settings and Configuration
+# ✅ Model Catalog and Custom Models
+
+# Optional Features (uncomment dependencies above):
+# 🔲 Facial AI Studio (mediapipe, diffusers, opencv-python)
+# 🔲 Audio Processing (soundfile, librosa)
+# 🔲 Web Server Inference (fastapi, uvicorn)
+# 🔲 Advanced Visualization (matplotlib, plotly, seaborn)
+# 🔲 Database Integration (sqlalchemy)
+# 🔲 Cloud Services (boto3, google-cloud, azure-sdk)
+# 🔲 Monitoring Services (sentry-sdk, wandb, mlflow)
+
+# ========================================
+# TROUBLESHOOTING COMMON ISSUES
+# ========================================
+
+# 1. MediaPipe Installation Issues:
+#    - Ensure Python 3.9-3.11 (avoid 3.12 for now)
+#    - Use 64-bit Python installation
+#    - Try: pip install mediapipe==0.10.7 (specific version)
+#    - Alternative: pip install mediapipe --no-deps (then install deps manually)
+
+# 2. CUDA/GPU Issues:
+#    - Install CUDA toolkit before PyTorch GPU versions
+#    - Verify GPU compatibility: nvidia-smi
+#    - Use CPU versions if GPU setup fails
+
+# 3. Memory Issues:
+#    - Use smaller models initially
+#    - Enable model quantization (bitsandbytes)
+#    - Monitor memory usage with psutil
+
+# 4. Import Errors:
+#    - Ensure virtual environment is activated
+#    - Reinstall packages if corruption suspected
+#    - Check Python path and module resolution
+
+# 5. Network/Download Issues:
+#    - Check firewall settings for HuggingFace access
+#    - Use offline mode if models are pre-downloaded
+#    - Configure proxy settings if needed
+
+# ========================================
+# VERSION NOTES
+# ========================================
+
+# This requirements file is designed to be:
+# - Compatible with Python 3.9-3.11
+# - Flexible for different deployment scenarios
+# - Modular with optional feature sets
+# - Well-documented for easy troubleshooting
+
+# Last updated: 2024
+# Compatible with: Windows 10/11, macOS 10.15+, Ubuntu 20.04+

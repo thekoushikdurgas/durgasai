@@ -1,0 +1,364 @@
+{
+  "models": {
+    "mistral_7b": {
+      "name": "Mistral 7B Instruct",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.2",
+      "provider": "huggingface_api",
+      "description": "Powerful instruction-following model",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "instruction",
+      "use_cases": ["reasoning", "coding", "analysis"]
+    },
+    "zephyr_7b": {
+      "name": "Zephyr 7B Beta",
+      "model_id": "HuggingFaceH4/zephyr-7b-beta",
+      "provider": "huggingface_api",
+      "description": "Great conversational AI model",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "conversational",
+      "use_cases": ["chat", "qa", "general"]
+    },
+    "flan_t5": {
+      "name": "Flan T5 Large",
+      "model_id": "google/flan-t5-large",
+      "provider": "huggingface_api",
+      "description": "Google's instruction-tuned T5 model",
+      "max_tokens": 256,
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "educational",
+      "use_cases": ["education", "facts", "explanations"]
+    },
+    "dialogpt_medium": {
+      "name": "DialoGPT Medium",
+      "model_id": "microsoft/DialoGPT-medium",
+      "provider": "huggingface_local",
+      "description": "Microsoft's conversational AI model",
+      "max_tokens": 150,
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "dialogue",
+      "use_cases": ["casual_chat", "dialogue", "roleplay"]
+    },
+    "blenderbot": {
+      "name": "BlenderBot 400M",
+      "model_id": "facebook/blenderbot-400M-distill",
+      "provider": "huggingface_api", 
+      "description": "Facebook's open-domain chatbot",
+      "max_tokens": 200,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "creative",
+      "use_cases": ["open_domain", "creative", "brainstorming"]
+    },
+    "idefics2_8b": {
+      "name": "Idefics2 8B Vision Model",
+      "model_id": "HuggingFaceM4/idefics2-8b",
+      "provider": "huggingface_api",
+      "description": "Open multimodal model that accepts arbitrary sequences of image and text inputs",
+      "max_tokens": 1024,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "vision",
+      "use_cases": ["image_analysis", "visual_qa", "ocr", "document_understanding", "visual_reasoning"],
+      "supports_images": true,
+      "input_types": ["image", "text"],
+      "model_size": "8B",
+      "license": "apache-2.0",
+      "features": ["multi_image_support", "high_resolution", "ocr_capable", "instruction_following"]
+    },
+    "idefics2_8b_chatty": {
+      "name": "Idefics2 8B Chatty Vision Model",
+      "model_id": "HuggingFaceM4/idefics2-8b-chatty",
+      "provider": "huggingface_api",
+      "description": "Idefics2-8b further fine-tuned on long conversations for extended responses",
+      "max_tokens": 2048,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "vision",
+      "use_cases": ["detailed_image_analysis", "long_form_qa", "storytelling", "extended_conversations"],
+      "supports_images": true,
+      "input_types": ["image", "text"],
+      "model_size": "8B",
+      "license": "apache-2.0",
+      "features": ["long_conversations", "detailed_responses", "multi_image_support", "high_resolution"]
+    },
+    "glm_4_5v": {
+      "name": "GLM-4.5V Vision Model",
+      "model_id": "zai-org/GLM-4.5V",
+      "provider": "huggingface_api",
+      "description": "Cutting-edge reasoning vision language model",
+      "max_tokens": 1024,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "vision",
+      "use_cases": ["image_analysis", "visual_qa", "reasoning"],
+      "supports_images": true,
+      "input_types": ["image", "text"]
+    },
+    "blip_image_captioning": {
+      "name": "BLIP Image Captioning",
+      "model_id": "Salesforce/blip-image-captioning-base",
+      "provider": "huggingface_api",
+      "description": "Specialized image captioning model",
+      "max_tokens": 100,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "vision",
+      "use_cases": ["image_captioning", "description"],
+      "supports_images": true,
+      "input_types": ["image"]
+    },
+    "blip_vqa": {
+      "name": "BLIP Visual Question Answering",
+      "model_id": "Salesforce/blip-vqa-base",
+      "provider": "huggingface_api",
+      "description": "Visual question answering model",
+      "max_tokens": 50,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "vision",
+      "use_cases": ["visual_qa", "question_answering"],
+      "supports_images": true,
+      "input_types": ["image", "text"]
+    },
+    "hunyuan_image_2_1": {
+      "name": "HunyuanImage-2.1",
+      "model_id": "tencent/HunyuanImage-2.1",
+      "provider": "huggingface_api",
+      "description": "Highly efficient text-to-image model capable of generating 2K (2048 × 2048) resolution images",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": true,
+      "category": "generative",
+      "use_cases": ["text_to_image", "image_generation", "art_creation", "content_creation"],
+      "supports_images": false,
+      "generates_images": true,
+      "input_types": ["text"],
+      "output_types": ["image"],
+      "model_size": "17B",
+      "license": "tencent-hunyuan-community",
+      "features": ["2k_resolution", "multilingual", "aspect_ratio_support", "prompt_enhancement", "refiner_model"],
+      "supported_resolutions": ["2048x2048", "2560x1536", "1536x2560", "2304x1792", "1792x2304", "2048x1365", "1365x2048"],
+      "supported_aspect_ratios": ["1:1", "16:9", "9:16", "4:3", "3:4", "3:2", "2:3"],
+      "system_requirements": {
+        "gpu_memory": "24GB+",
+        "os": "Linux",
+        "cuda": true
+      },
+      "generation_params": {
+        "default_steps": 50,
+        "default_guidance_scale": 3.5,
+        "default_shift": 5,
+        "distilled_steps": 8,
+        "distilled_guidance_scale": 3.25,
+        "distilled_shift": 4
+      }
+    },
+    "custom_shared_model": {
+      "name": "Custom Shared Model",
+      "model_id": "username/custom-shared-model",
+      "provider": "huggingface_api",
+      "description": "Template for custom shared models created through DurgasAI",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": false,
+      "category": "custom",
+      "use_cases": ["custom_tasks", "domain_specific", "fine_tuned"],
+      "supports_sharing": true,
+      "sharing_template": {
+        "default_license": "apache-2.0",
+        "default_private": false,
+        "default_gated": false,
+        "auto_create_model_card": true,
+        "include_performance_metrics": true,
+        "require_model_description": true
+      }
+    },
+    "modular_model_template": {
+      "name": "Modular Model Template",
+      "model_id": "username/modular-model",
+      "provider": "custom",
+      "description": "Template for modular models created through DurgasAI",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": false,
+      "category": "modular",
+      "use_cases": ["custom_architecture", "model_contribution", "research"],
+      "supports_modular": true,
+      "modular_template": {
+        "available_base_models": [
+          "bert", "gpt2", "llama", "mistral", "t5", "roberta", 
+          "albert", "electra", "distilbert", "deberta"
+        ],
+        "default_base_model": "bert",
+        "auto_generate_files": true,
+        "include_tokenizer": true,
+        "include_config": true,
+        "include_modeling": true,
+        "include_init": true,
+        "validation_enabled": true,
+        "conversion_enabled": true
+      }
+    },
+    "legacy_model_template": {
+      "name": "Legacy Model Template",
+      "model_id": "username/legacy-model",
+      "provider": "custom",
+      "description": "Template for legacy model contributions created through DurgasAI",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": false,
+      "category": "legacy",
+      "use_cases": ["custom_architecture", "model_contribution", "research", "education"],
+      "supports_legacy": true,
+      "legacy_template": {
+        "supported_model_types": [
+          "encoder", "decoder", "encoder-decoder"
+        ],
+        "supported_tokenizers": [
+          "BPE", "WordPiece", "SentencePiece", "GPT-2", "RoBERTa", "Custom"
+        ],
+        "supported_tasks": [
+          "causal_lm", "masked_lm", "sequence_classification", "token_classification",
+          "question_answering", "summarization", "translation", "text_generation"
+        ],
+        "auto_generate_files": true,
+        "include_tokenizer": true,
+        "include_config": true,
+        "include_modeling": true,
+        "include_init": true,
+        "include_conversion_script": true,
+        "include_tests": true,
+        "validation_enabled": true,
+        "testing_enabled": true
+      }
+    },
+    "documentation_template": {
+      "name": "Documentation Template",
+      "model_id": "username/documentation-model",
+      "provider": "custom",
+      "description": "Template for automated documentation generation in DurgasAI",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": false,
+      "category": "documentation",
+      "use_cases": ["documentation_generation", "code_validation", "professional_standards"],
+      "supports_documentation": true,
+      "documentation_template": {
+        "auto_docstring_enabled": true,
+        "standard_arguments_included": true,
+        "custom_arguments_supported": true,
+        "return_type_documentation": true,
+        "validation_enabled": true,
+        "format_compliance": true,
+        "professional_quality": true,
+        "huggingface_compatible": true,
+        "supported_formats": ["python", "py"],
+        "validation_checks": [
+          "@auto_docstring_applied",
+          "arguments_complete",
+          "types_match",
+          "no_placeholders",
+          "format_compliant"
+        ]
+      }
+    },
+    "attention_template": {
+      "name": "Attention Function Template",
+      "model_id": "username/attention-model",
+      "provider": "custom",
+      "description": "Template for custom attention functions in DurgasAI",
+      "max_tokens": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.1,
+      "enabled": false,
+      "category": "attention",
+      "use_cases": ["attention_customization", "performance_optimization", "research", "education"],
+      "supports_attention": true,
+      "attention_template": {
+        "builtin_functions": [
+          "eager", "sdpa", "flash_attention_2", "flex_attention"
+        ],
+        "custom_function_support": true,
+        "performance_benchmarking": true,
+        "dynamic_switching": true,
+        "multimodal_support": true,
+        "mask_function_support": true,
+        "validation_enabled": true,
+        "template_types": [
+          "Basic Scaled Dot-Product",
+          "Custom Scaling",
+          "Logging Wrapper",
+          "Custom Implementation"
+        ],
+        "benchmark_settings": {
+          "default_runs": 5,
+          "min_runs": 3,
+          "max_runs": 20,
+          "default_sequence_length": 128,
+          "default_batch_size": 2
+        }
+      }
+    }
+  },
+  "system_prompts": {
+    "helpful_assistant": "You are a helpful AI assistant. Provide clear, accurate, and helpful responses.",
+    "creative_writer": "You are a creative writing assistant. Help users with storytelling, poetry, and creative content.",
+    "code_expert": "You are a programming expert. Help users with coding questions, debugging, and best practices.",
+    "research_assistant": "You are a research assistant. Help users find information, analyze data, and summarize findings.",
+    "tutor": "You are a friendly tutor. Explain concepts clearly and help users learn new topics step by step."
+  },
+  "providers": {
+    "huggingface_api": {
+      "name": "HuggingFace API",
+      "requires_token": true,
+      "supports_streaming": true,
+      "rate_limits": {
+        "requests_per_minute": 100,
+        "tokens_per_minute": 10000
+      }
+    },
+    "huggingface_local": {
+      "name": "HuggingFace Local",
+      "requires_token": false,
+      "supports_streaming": false,
+      "memory_requirements": "4GB+"
+    }
+  }
+}
